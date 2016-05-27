@@ -14,7 +14,7 @@ project(        ofCMakeProject )
 set( APP_NAME   ofApp )
 
 # ------------------------ OF Path -----------------------
-set( OF_DIRECTORY "--- YOUR OF PATH ----" )                 # Please put your OF path in here
+set( OF_DIRECTORY "/YOUR_OF_PATH/" )                 # Please put your OF path in here
 
 # --------------------- Source Files ---------------------
 set( ${APP_NAME}_SOURCE_FILES
@@ -30,7 +30,7 @@ set( OFX_ADDONS_ACTIVE
 )
 
 # ------------------------ AddOns EXTERNAL ----------------
-#include( ${OF_DIRECTORY}/addons/ofxFluid/ )
+#include( ${OF_DIRECTORY}/addons/external/ofxFluid/ )
 
 # ========================================================
 # ===================== OpenFrameworks ===================
