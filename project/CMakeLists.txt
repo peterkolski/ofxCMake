@@ -27,7 +27,6 @@ set( OFX_ADDONS_ACTIVE
         #        ofxXmlSettings
         #        ofxOsc
         #        ofxGui
-        #        ofxKinect # --- Not finished yet
         )
 
 # ------------------------ AddOns EXTERNAL ----------------
