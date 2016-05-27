@@ -27,7 +27,7 @@ set( OFX_ADDONS_ACTIVE
         #        ofxXmlSettings
         #        ofxOsc
         #        ofxGui
-        )
+)
 
 # ------------------------ AddOns EXTERNAL ----------------
 #include( ${OF_DIRECTORY}/addons/ofxFluid/ )
@@ -35,15 +35,6 @@ set( OFX_ADDONS_ACTIVE
 # ========================================================
 # ===================== OpenFrameworks ===================
 # ========================================================
-include( ${OF_DIRECTORY}/CMake/modules/openFrameworks.cmake )
-include( ${OF_DIRECTORY}/CMake/modules/addonsBasicConfig.cmake )
-
-if( APPLE )
-    include( ${OF_DIRECTORY}/CMake/modules/configApple.cmake )
-endif()
-
-# ===================== App Properties ===================
-set_target_properties(${APP_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
-
+include( ${OF_DIRECTORY}/CMake/modules/openFrameworksGlobal.cmake )
 # ========================================================
 
