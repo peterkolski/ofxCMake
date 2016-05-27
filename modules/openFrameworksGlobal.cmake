@@ -1,6 +1,6 @@
 
 
-include( ${OF_DIRECTORY}/CMake/modules/addonsBasicConfig.cmake )
+include( ${OF_DIRECTORY}/CMake/modules/addOnsInternal.cmake )
 
 if( APPLE )
     include( ${OF_DIRECTORY}/CMake/modules/configApple.cmake )
