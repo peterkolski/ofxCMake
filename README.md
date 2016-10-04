@@ -28,5 +28,11 @@ So do not just copy it into the `of/addons/` folder and expect it to work.
 ``set( OFX_ADDONS_ACTIVE ofxGui )``
 
 ## CLion IDE usage
+1. Prepare your project as explained above
+2. Choose via CLion in the 'Open File or Project' the `CMakeLists.txt`
+
+- A promt might ask, if you want to change the 'project root'. Ignore this
+- In git, the CLion project files will be saved in  a '.idea' folder. If you want, you can ignore that in GIT.
 
 ## Compatibility
+At the moment (Oct 2016) only Mac OS is supported
