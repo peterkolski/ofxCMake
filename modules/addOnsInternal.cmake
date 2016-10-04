@@ -8,3 +8,8 @@ include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxOsc.cmake )
 include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxXmlSettings.cmake )
 include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxGui.cmake )
 include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxKinect.cmake )
+
+
+# ----- SKIZZE ---------
+#file( GLOB_RECURSE ALL_ADDON_FILES  "${OF_DIRECTORY}/CMake/addOns/*.cmake" )
+#include( ALL_ADDON_FILES )
