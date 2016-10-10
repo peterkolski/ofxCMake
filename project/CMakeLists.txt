@@ -27,6 +27,7 @@ set( OFX_ADDONS_ACTIVE
         #        ofxXmlSettings
         #        ofxOsc
         #        ofxGui
+        #        ofxNetwork
 )
 
 # ------------------------ AddOns EXTERNAL ----------------

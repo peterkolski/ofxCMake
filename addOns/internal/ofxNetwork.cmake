@@ -17,7 +17,6 @@ include_directories( "${OF_DIRECTORY}/addons/ofxNetwork/src" )
 # --- Set the keyword, so you can simply include the addOn
 # -----------------------------------------------------------------
 
-add_library(    ofxNetwork              # Set the name of the addOn
+add_library(    ofxNetwork
                 STATIC
-                ${OFX_NETWORK_CPP}      # Set the name
-                )
+                ${OFX_NETWORK_CPP} )
