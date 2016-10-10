@@ -32,6 +32,8 @@ add_library(    ofxAssimpModelLoader
 
 #TODO Libs for other OS (Win & Linux)
 if( APPLE )
-set(    ofxAssimpModelLoaderLib
-        "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/libs/assimp/lib/assimp.a" )
+#set(    ofxAssimpModelLoaderLib
+#        "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/libs/assimp/lib/assimp.a" )
+#target_link_libraries(  ${APP_NAME}
+#            "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/libs/assimp/lib/assimp.a" )
 endif()
