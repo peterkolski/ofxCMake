@@ -28,12 +28,13 @@ set( OFX_ADDONS_ACTIVE
         #        ofxOsc
         #        ofxGui
         #        ofxNetwork
-        #        ofxSvg
         #        ofxVectorGraphics
-        #        ofxOpenCv
         #        ofxThreadedImageLoader
-        #        ofxEmscripten
         #        ofxAssimpModelLoader
+        #        ofxKinect (not working)
+        #        ofxOpenCv (not working)
+        #        ofxSvg  (not working)
+        #        ofxEmscripten (untested)
 )
 
 # ========================================================
