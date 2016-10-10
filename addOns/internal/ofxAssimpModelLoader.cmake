@@ -1,3 +1,4 @@
+#TODO Linking with i368 libraries
 # -----------------------------------------------------------------
 # --- Script to search for all the .cpp files in the chosen folder
 # -----------------------------------------------------------------
@@ -13,7 +14,7 @@ file(   GLOB_RECURSE
 
 include_directories(
         "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/src"
-        "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/libs/assimp/include/assimp"
+        "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/libs/assimp/include"
         "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/libs/assimp/include/assimp/Compiler"
                     )
 
