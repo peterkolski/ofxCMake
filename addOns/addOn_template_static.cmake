@@ -10,6 +10,7 @@
 
 # -----------------------------------------------------------------
 # --- Script to search for all the .cpp files in the chosen folder
+# --- NOTE: Ensure not to include an example folder
 # -----------------------------------------------------------------
 
 file(   GLOB_RECURSE
