@@ -1,6 +1,7 @@
 # =================================================================
 #
 # Template for a static approach
+# WITHOUT extra libraries
 # static -> .cmake file is in the '/of/CMake/addons/' folder
 #
 # Easiest way: replace all the NAME into the name of your addOn
