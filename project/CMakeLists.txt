@@ -22,16 +22,14 @@ set( ${APP_NAME}_SOURCE_FILES
         src/ofApp.cpp )
 
 
-# ------------------------ AddOns OF INTERNAL ------------
+# ------------------------ AddOns  ------------
 set( OFX_ADDONS_ACTIVE
         #        ofxXmlSettings
         #        ofxOsc
         #        ofxGui
         #        ofxNetwork
+        #        ofxSvg
 )
-
-# ------------------------ AddOns EXTERNAL ----------------
-#include( ${OF_DIRECTORY}/addons/external/ofxFluid/ )
 
 # ========================================================
 # ===================== OpenFrameworks ===================
