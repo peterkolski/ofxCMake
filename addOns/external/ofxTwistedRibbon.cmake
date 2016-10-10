@@ -1,9 +1,22 @@
-#---------------------------------------------------------------------------------
-#------------------------------- ofxTwistedRibbon ----------------------------------
-#---------------------------------------------------------------------------------
+# -----------------------------------------------------------------
+# --- Script to search for all the .cpp files in the chosen folder
+# -----------------------------------------------------------------
 
-file( GLOB_RECURSE OFX_TWISTEDRIBBON_CPP  "${OF_DIRECTORY}/addons/ofxTwistedRibbon/src/*.cpp" )
+file(   GLOB_RECURSE
+        OFX_TWISTEDRIBBON_CPP
+        "${OF_DIRECTORY}/addons/ofxTwistedRibbon/src/*.cpp" )
+
+# -----------------------------------------------------------------
+# --- Set ALL directories of the addOn, which contain .h files
+# -----------------------------------------------------------------
 
 include_directories(    "${OF_DIRECTORY}/addons/ofxTwistedRibbon/src" )
 
-add_library( ofxTwistedRibbon STATIC ${OFX_TWISTEDRIBBON_CPP} )
+# -----------------------------------------------------------------
+# --- Set the keyword, so you can simply include the addOn
+# -----------------------------------------------------------------
+
+
+add_library(    ofxTwistedRibbon
+                STATIC
+                ${OFX_TWISTEDRIBBON_CPP} )
