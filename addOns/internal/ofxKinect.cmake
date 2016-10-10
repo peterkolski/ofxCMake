@@ -41,4 +41,5 @@ add_library( ofxKinect STATIC ${OFX_KINECT_CPP} )
 # --- Setting a compiled lib
 # -----------------------------------------------------------------
 
-set( ofxKinectOsxLib "${OF_DIRECTORY}/addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a" )
+set(    ofxKinectOsxLib
+        "${OF_DIRECTORY}/addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a" )

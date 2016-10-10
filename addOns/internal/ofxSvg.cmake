@@ -23,3 +23,5 @@ include_directories(
 add_library(    ofxSvg
         STATIC
         ${OFX_SVG_CPP} )
+
+#TODO include Libs
