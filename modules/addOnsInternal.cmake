@@ -11,6 +11,11 @@ include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxGui.cmake )
 include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxKinect.cmake )
 include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxNetwork.cmake )
 include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxSvg.cmake )
+include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxVectorGraphics.cmake )
+#include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxOpenCv.cmake )
+#include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxThreadedImageLoader.cmake )
+#include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxEmscripten.cmake )
+#include( ${OF_DIRECTORY}/CMake/addOns/internal/ofxAssimpModelLoader.cmake )
 
 # TODO automatic search for addOns .cmake files
 #file( GLOB_RECURSE ALL_ADDON_FILES  "${OF_DIRECTORY}/CMake/addOns/*.cmake" )
