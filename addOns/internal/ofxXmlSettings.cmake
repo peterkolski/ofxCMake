@@ -1,10 +1,24 @@
-#---------------------------------------------------------------------------------
-#------------------------------- ofxXmlSettings ----------------------------------
-#---------------------------------------------------------------------------------
+# -----------------------------------------------------------------
+# --- Script to search for all the .cpp files in the chosen folder
+# -----------------------------------------------------------------
 
-file( GLOB_RECURSE OFX_XML_CPP  "${OF_DIRECTORY}/addons/ofxXmlSettings/*.cpp" )
+file(   GLOB_RECURSE
+        OFX_XML_CPP
+        "${OF_DIRECTORY}/addons/ofxXmlSettings/*.cpp"
+        )
 
-include_directories(    "${OF_DIRECTORY}/addons/ofxXmlSettings/src"
+# -----------------------------------------------------------------
+# --- Set ALL directories of the addOn, which contain .h files
+# -----------------------------------------------------------------
+
+include_directories(
+        "${OF_DIRECTORY}/addons/ofxXmlSettings/src"
         "${OF_DIRECTORY}/addons/ofxXmlSettings/libs" )
 
-add_library( ofxXmlSettings STATIC ${OFX_XML_CPP} )
+# -----------------------------------------------------------------
+# --- Set the keyword, so you can simply include the addOn
+# -----------------------------------------------------------------
+
+add_library(    ofxXmlSettings
+                STATIC
+                ${OFX_XML_CPP} )

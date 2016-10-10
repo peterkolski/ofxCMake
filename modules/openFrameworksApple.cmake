@@ -160,7 +160,6 @@ set(LIB_BOOST_1 ${OF_DIRECTORY}/libs/boost/lib/osx/boost.a)
 set(LIB_BOOST_2 ${OF_DIRECTORY}/libs/boost/lib/osx/boost_filesystem.a)
 set(LIB_BOOST_3 ${OF_DIRECTORY}/libs/boost/lib/osx/boost_system.a)
 
-# Updated list
 set(OF_CORE_LIBS
         ${glut_lib}
         ${LIB_POCO_1} ${LIB_POCO_2} ${LIB_POCO_3} ${LIB_POCO_4} ${LIB_POCO_5} ${LIB_POCO_6} ${LIB_POCO_7} ${LIB_POCO_8} ${LIB_POCO_9} ${LIB_POCO_10} ${LIB_POCO_11}
@@ -231,6 +230,7 @@ set_target_properties(of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SO
 set_target_properties(of_shared PROPERTIES OUTPUT_NAME openFrameworks)
 target_link_libraries(of_shared ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS})
 
+# TODO Explain the excecutable bindings
 ADD_CUSTOM_COMMAND(TARGET of_shared
         POST_BUILD
         COMMAND ${CMAKE_INSTALL_NAME_TOOL}

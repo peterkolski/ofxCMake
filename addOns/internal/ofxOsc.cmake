@@ -1,6 +1,9 @@
-#---------------------------------------------------------------------------------
-#------------------------------------- ofxOsc ------------------------------------
-#---------------------------------------------------------------------------------
+# -----------------------------------------------------------------
+# --- NO script applied, as there are different
+# --- versions for each plattform
+# -----------------------------------------------------------------
+
+# TODO Windows libs
 set( OFX_OSC_CPP
         ${OF_DIRECTORY}/addons/ofxOsc/libs/oscpack/src/ip/IpEndpointName.cpp
         ${OF_DIRECTORY}/addons/ofxOsc/libs/oscpack/src/ip/posix/NetworkingUtils.cpp
@@ -17,9 +20,18 @@ set( OFX_OSC_CPP
         ${OF_DIRECTORY}/addons/ofxOsc/src/ofxOscReceiver.cpp
         ${OF_DIRECTORY}/addons/ofxOsc/src/ofxOscSender.cpp )
 
+# -----------------------------------------------------------------
+# --- Set ALL directories of the addOn, which contain .h files
+# -----------------------------------------------------------------
+
 include_directories(    "${OF_DIRECTORY}/addons/ofxOsc/src"
                         "${OF_DIRECTORY}/addons/ofxOsc/libs/oscpack/src"
                         "${OF_DIRECTORY}/addons/ofxOsc/libs/oscpack/src/ip"
                         "${OF_DIRECTORY}/addons/ofxOsc/libs/oscpack/src/osc" )
+
+# -----------------------------------------------------------------
+# --- Set the keyword, so you can simply include the addOn
+# -----------------------------------------------------------------
+
 
 add_library( ofxOsc STATIC ${OFX_OSC_CPP} )

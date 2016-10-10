@@ -1,9 +1,9 @@
-#---------------------------------------------------------------------------------
-#------------------------------- ofxKinect ----------------------------------
-#---------------------------------------------------------------------------------
-#file( GLOB_RECURSE OUTPUT "${OF_DIRECTORY}/addons/ofxKinect/*.c" )
-#message( "Files: ${OUTPUT}" )
+# -----------------------------------------------------------------
+# --- NO script applied, as there are different
+# --- versions for each plattform
+# -----------------------------------------------------------------
 
+# TODO Windows libs
 set( OFX_KINECT_CPP
         ${OF_DIRECTORY}/addons/ofxKinect/src/extra/ofxKinectExtras.cpp
         ${OF_DIRECTORY}/addons/ofxKinect/src/ofxKinect.cpp
@@ -20,12 +20,25 @@ set( OFX_KINECT_CPP
         ##        ${OF_DIRECTORY}/addons/ofxKinect/libs/libfreenect/platform/windows/libusb10emu/libusb-1.0/libusbemu.cpp
         )
 
-include_directories(    "${OF_DIRECTORY}/addons/ofxKinect/src"
+# -----------------------------------------------------------------
+# --- Set ALL directories of the addOn, which contain .h files
+# -----------------------------------------------------------------
+
+include_directories(
+        "${OF_DIRECTORY}/addons/ofxKinect/src"
         "${OF_DIRECTORY}/addons/ofxKinect/src/extra"
         "${OF_DIRECTORY}/addons/ofxKinect/libs/libfreenect/include"
         "${OF_DIRECTORY}/addons/ofxKinect/libs/libfreenect/src"
         "${OF_DIRECTORY}/addons/ofxKinect/libs/libusb-1.0/include/libusb-1.0" )
 
+# -----------------------------------------------------------------
+# --- Set the keyword, so you can simply include the addOn
+# -----------------------------------------------------------------
+
 add_library( ofxKinect STATIC ${OFX_KINECT_CPP} )
+
+# -----------------------------------------------------------------
+# --- Setting a compiled lib
+# -----------------------------------------------------------------
 
 set( ofxKinectOsxLib "${OF_DIRECTORY}/addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a" )
