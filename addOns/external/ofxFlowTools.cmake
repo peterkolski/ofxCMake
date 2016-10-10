@@ -2,7 +2,9 @@
 #------------------------------- ofxFlowTools ----------------------------------
 #---------------------------------------------------------------------------------
 
-file( GLOB_RECURSE OFX_FLOWTOOLS_CPP  "${OF_DIRECTORY}/addons/ofxFlowTools/src/*.cpp" )
+file(   GLOB_RECURSE
+        OFX_FLOWTOOLS_CPP
+        "${OF_DIRECTORY}/addons/ofxFlowTools/src/*.cpp" )
 
 include_directories(
         "${OF_DIRECTORY}/addons/ofxFlowTools/src"
@@ -17,4 +19,6 @@ include_directories(
         "${OF_DIRECTORY}/addons/ofxFlowTools/src/visualisation"
 )
 
-add_library( ofxFlowTools STATIC ${OFX_FLOWTOOLS_CPP} )
+add_library( ofxFlowTools
+            STATIC
+            ${OFX_FLOWTOOLS_CPP} )
