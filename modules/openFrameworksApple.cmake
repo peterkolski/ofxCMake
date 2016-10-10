@@ -211,10 +211,10 @@ set(OF_CORE_FRAMEWORKS
         ${corevideo_lib}
         ${qtkit_lib}
         ${cocoa_lib}
-        ${coremedia_lib}     # new in oF 0.9
-        ${avfoundation_lib}  # new in oF 0.9
-        ${quartzcore_lib}    # new in oF 0.9
-        ${appkit_lib})       # new in oF 0.9
+        ${coremedia_lib}
+        ${avfoundation_lib}
+        ${quartzcore_lib}
+        ${appkit_lib})
 # =============================================================
 
 set(OF_SOURCE_FILES ${OF_SOURCE_FILES} ${ADDON_SOURCE_FILES})
