@@ -35,13 +35,27 @@ include_directories(
 # --- Set the keyword, so you can simply include the addOn
 # -----------------------------------------------------------------
 
-add_library( ofxKinect STATIC ${OFX_KINECT_CPP} )
+add_library(    ofxKinect
+                STATIC
+                ${OFX_KINECT_CPP} )
 
 # -----------------------------------------------------------------
 # --- Setting a compiled lib
 # -----------------------------------------------------------------
 
+
 if( APPLE )
-set(    ofxKinectLib
-        "${OF_DIRECTORY}/addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a" )
+    find_library( CORE_FOUNDATION_LIB_KINECT  CoreFoundation)
+    find_library( IOKIT_LIB_KINECT  IOKit)
+    set(    ofxKinectLib  "${OF_DIRECTORY}/addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a" )
+
+    set(    EXTRA_LIBS_KINECT
+            ${CORE_FOUNDATION_LIB_KINECT}
+            ${IOKIT_LIB_KINECT}
+            ${ofxKinectLib}
+            )
 endif()
+
+target_link_libraries(  ofxKinect
+                        ${EXTRA_LIBS_KINECT}
+                        )
