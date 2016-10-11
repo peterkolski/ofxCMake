@@ -29,9 +29,28 @@ include_directories(
 
 # -----------------------------------------------------------------
 # --- Set the keyword, so you can simply include the addOn
+# --- (Creates actually a library)
 # -----------------------------------------------------------------
 
 add_library(    ofxNAME              # Set the name of the addOn
-        STATIC
-        ${OFX_NAME_CPP}      # Set the name
-        )
+                STATIC
+                ${OFX_NAME_CPP}      # Set the name
+                )
+
+# -----------------------------------------------------------------
+# --- In case OS specific libs are needed
+# --- Be sure to link them in target_link_libraries()
+# -----------------------------------------------------------------
+
+#if( APPLE )
+#    find_library( CORE_FOUNDATION_LIB_NAME  CoreFoundation)
+#    set(    EXTRA_LIBS_NAME
+#            ${CORE_FOUNDATION_LIB_MIDI}
+#            )
+#endif()
+
+
+
+#target_link_libraries( ofxNAME
+#        ${EXTRA_LIBS_NAME}
+#        )
