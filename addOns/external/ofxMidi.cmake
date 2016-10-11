@@ -21,20 +21,21 @@ include_directories(
 # --- Set the keyword, so you can simply include the addOn
 # -----------------------------------------------------------------
 
-if( APPLE )
-        find_library( corefoundation_lib_2      CoreFoundation)
-        find_library( COREMIDI                  CoreMIDI )
-        find_library( coreaudio_lib_2           CoreAudio)
-endif()
-
 add_library(    ofxMidi
                 STATIC
                 ${OFX_MIDI_CPP}
-        )
+                )
+
+if( APPLE )
+        find_library( CORE_FOUNDATION_LIB_MIDI  CoreFoundation)
+        find_library( COREMIDI                  CoreMIDI )
+        find_library( CORE_AUDIO_LIB_MIDI       CoreAudio)
+endif()
+
 
 #TODO into if-end?
 target_link_libraries( ofxMidi
                         ${COREMIDI}
-                        ${corefoundation_lib_2}
-                        ${coreaudio_lib_2}
+                        ${CORE_FOUNDATION_LIB_MIDI}
+                        ${CORE_AUDIO_LIB_MIDI}
                         )
