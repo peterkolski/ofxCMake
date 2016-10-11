@@ -42,7 +42,7 @@ add_library(    ofxKinect
 # -----------------------------------------------------------------
 # --- Setting a compiled lib
 # -----------------------------------------------------------------
-
+#TODO Libs for other OS (Win & Linux)
 
 if( APPLE )
     find_library( CORE_FOUNDATION_LIB_KINECT  CoreFoundation)
@@ -52,7 +52,7 @@ if( APPLE )
     set(    EXTRA_LIBS_KINECT
             ${CORE_FOUNDATION_LIB_KINECT}
             ${IOKIT_LIB_KINECT}
-            ${ofxKinectLib}
+#            ${ofxKinectLib}
             )
 endif()
 
