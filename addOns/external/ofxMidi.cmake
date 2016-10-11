@@ -28,14 +28,13 @@ add_library(    ofxMidi
 
 if( APPLE )
         find_library( CORE_FOUNDATION_LIB_MIDI  CoreFoundation)
-        find_library( COREMIDI                  CoreMIDI )
+        find_library( CORE_MIDI                 CoreMIDI )
         find_library( CORE_AUDIO_LIB_MIDI       CoreAudio)
+        set(    EXTRA_LIBS_MIDI
+                ${CORE_FOUNDATION_LIB_MIDI}
+                ${CORE_AUDIO_LIB_MIDI}
+                ${CORE_MIDI}
+                )
 endif()
 
-
-#TODO into if-end?
-target_link_libraries( ofxMidi
-                        ${COREMIDI}
-                        ${CORE_FOUNDATION_LIB_MIDI}
-                        ${CORE_AUDIO_LIB_MIDI}
-                        )
+target_link_libraries( ofxMidi ${EXTRA_LIBS_MIDI}  )
