@@ -22,28 +22,19 @@ include_directories(
 # -----------------------------------------------------------------
 
 if( APPLE )
-#        INCLUDE_DIRECTORIES ( /Developer/Headers/FlatCarbon )   # Is this path correct?
         find_library( corefoundation_lib_2      CoreFoundation)
         find_library( COREMIDI                  CoreMIDI )
         find_library( coreaudio_lib_2           CoreAudio)
-
-#        find_package(OpenGL REQUIRED)
-#        include_directories(${OPENGL_INCLUDE_DIR})
-#        target_link_libraries(<your program name> ${OPENGL_LIBRARIES})
 endif()
-
-message( WARNING "CoreMidi Path: " ${COREMIDI} )
 
 add_library(    ofxMidi
                 STATIC
-#                SHARED
-#                ${MIDI_LIBS}
                 ${OFX_MIDI_CPP}
         )
 
+#TODO into if-end?
 target_link_libraries( ofxMidi
                         ${COREMIDI}
                         ${corefoundation_lib_2}
                         ${coreaudio_lib_2}
                         )
-
