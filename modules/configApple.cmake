@@ -16,7 +16,7 @@ add_dependencies(${APP_NAME} of_shared)
 target_link_libraries(  ${APP_NAME}
                         $<TARGET_FILE:of_shared>
                         ${opengl_lib}
-                        ${ofxKinectLib}             #TODO seperate linking (without Apple)?
+#                        ${ofxKinectLib}             #TODO seperate linking (without Apple)?
 #                        ${ofxAssimpModelLoaderLib}  #TODO seperate linking (without Apple)?
 #                        ${ofxOpenCVLib}             #TODO seperate linking (without Apple)?
                         ${OFX_ADDONS_ACTIVE}
