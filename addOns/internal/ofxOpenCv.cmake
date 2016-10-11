@@ -22,17 +22,26 @@ include_directories(
 # -----------------------------------------------------------------
 
 add_library(    ofxOpenCv
-        STATIC
-        ${OFX_OPENCV_CPP} )
+                STATIC
+                ${OFX_OPENCV_CPP} )
 
 # -----------------------------------------------------------------
 # --- Setting a compiled lib
 # -----------------------------------------------------------------
-
 #TODO Libs for other OS (Win & Linux)
+
 if( APPLE )
-    set(    ofxOpenCVLib "${OF_DIRECTORY}/addons/ofxOpenCv/libs/opencv/lib/opencv.a" )
-#target_link_libraries(
-#        ${APP_NAME}
-#        "${OF_DIRECTORY}/addons/ofxOpenCv/libs/opencv/lib/opencv.a" )
+    find_library( CORE_FOUNDATION_LIB_OPENCV  CoreFoundation)
+#    find_library( IOKIT_LIB_OPENCV  IOKit)
+    set(    ofxOpenCvLib "${OF_DIRECTORY}/addons/ofxOpenCv/libs/opencv/lib/opencv.a" )
+
+    set(    EXTRA_LIBS_OPENCV
+            ${CORE_FOUNDATION_LIB_OPENCV}
+#            ${IOKIT_LIB_OPENCV}
+#            ${ofxOpenCvLib}
+            )
 endif()
+
+target_link_libraries(  ofxOpenCv
+                        ${EXTRA_LIBS_OPENCV}
+                        )
