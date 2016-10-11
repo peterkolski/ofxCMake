@@ -19,7 +19,9 @@ target_link_libraries(  ${APP_NAME}
                         ${ofxKinectLib}             #TODO seperate linking (without Apple)?
 #                        ${ofxAssimpModelLoaderLib}  #TODO seperate linking (without Apple)?
 #                        ${ofxOpenCVLib}             #TODO seperate linking (without Apple)?
-                        ${OFX_ADDONS_ACTIVE} )
+                        ${OFX_ADDONS_ACTIVE}
+        )
+
 
 # ================================================
 ADD_CUSTOM_COMMAND(TARGET ${APP_NAME}

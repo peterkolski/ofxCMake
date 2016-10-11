@@ -4,7 +4,7 @@
 
 file( GLOB_RECURSE OFX_MIDI_CPP
         "${OF_DIRECTORY}/addons/ofxMidi/src/*.cpp"
-        "${OF_DIRECTORY}/addons/ofxMidi/libs/rtmidi/*.cpp"
+        "${OF_DIRECTORY}/addons/ofxMidi/libs/*.cpp"
         )
 
 # -----------------------------------------------------------------
@@ -21,6 +21,29 @@ include_directories(
 # --- Set the keyword, so you can simply include the addOn
 # -----------------------------------------------------------------
 
+if( APPLE )
+#        INCLUDE_DIRECTORIES ( /Developer/Headers/FlatCarbon )   # Is this path correct?
+        find_library( corefoundation_lib_2      CoreFoundation)
+        find_library( COREMIDI                  CoreMIDI )
+        find_library( coreaudio_lib_2           CoreAudio)
+
+#        find_package(OpenGL REQUIRED)
+#        include_directories(${OPENGL_INCLUDE_DIR})
+#        target_link_libraries(<your program name> ${OPENGL_LIBRARIES})
+endif()
+
+message( WARNING "CoreMidi Path: " ${COREMIDI} )
+
 add_library(    ofxMidi
                 STATIC
-                ${OFX_MIDI_CPP} )
+#                SHARED
+#                ${MIDI_LIBS}
+                ${OFX_MIDI_CPP}
+        )
+
+target_link_libraries( ofxMidi
+                        ${COREMIDI}
+                        ${corefoundation_lib_2}
+                        ${coreaudio_lib_2}
+                        )
+
