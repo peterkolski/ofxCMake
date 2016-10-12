@@ -47,15 +47,15 @@ add_library(    ofxKinect
 if( APPLE )
     find_library( CORE_FOUNDATION_LIB_KINECT  CoreFoundation)
     find_library( IOKIT_LIB_KINECT  IOKit)
-    set(    ofxKinectLib  "${OF_DIRECTORY}/addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a" )
+    find_library( COCOA_LIB_KINECT  Cocoa)
+    set(          ofxKinectLib  "${OF_DIRECTORY}/addons/ofxKinect/libs/libusb-1.0/lib/osx/usb-1.0.a" )
 
     set(    EXTRA_LIBS_KINECT
             ${CORE_FOUNDATION_LIB_KINECT}
             ${IOKIT_LIB_KINECT}
-#            ${ofxKinectLib}
-            )
+            ${COCOA_LIB_KINECT}
+            ${ofxKinectLib}
+           )
 endif()
 
-target_link_libraries(  ofxKinect
-                        ${EXTRA_LIBS_KINECT}
-                        )
+target_link_libraries(  ofxKinect ${EXTRA_LIBS_KINECT} )
