@@ -21,7 +21,14 @@ include_directories(
 # -----------------------------------------------------------------
 
 add_library(    ofxSvg
-        STATIC
-        ${OFX_SVG_CPP} )
+                STATIC
+                ${OFX_SVG_CPP} )
 
-#TODO include Libs
+# -----------------------------------------------------------------
+# --- Setting a compiled lib
+# -----------------------------------------------------------------
+
+set(    EXTRA_LIBS_SVG
+        ${OF_DIRECTORY}/libs/poco/lib/osx/PocoXML.a)
+
+target_link_libraries(  ofxSvg ${EXTRA_LIBS_SVG} )
