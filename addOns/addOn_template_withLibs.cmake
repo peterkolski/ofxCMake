@@ -44,13 +44,11 @@ add_library(    ofxNAME              # Set the name of the addOn
 
 #if( APPLE )
 #    find_library( CORE_FOUNDATION_LIB_NAME  CoreFoundation)
+#    set( compiledLib    "${OF_DIRECTORY}/addons/ofxNAME/lib/myLib.a" )
 #    set(    EXTRA_LIBS_NAME
-#            ${CORE_FOUNDATION_LIB_MIDI}
+#            ${CORE_FOUNDATION_LIB_NAME}
+#            ${compiledLib}
 #            )
 #endif()
 
-
-
-#target_link_libraries( ofxNAME
-#        ${EXTRA_LIBS_NAME}
-#        )
+#target_link_libraries( ofxNAME ${EXTRA_LIBS_NAME} )
