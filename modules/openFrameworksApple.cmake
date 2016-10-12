@@ -162,7 +162,8 @@ set(LIB_BOOST_3 ${OF_DIRECTORY}/libs/boost/lib/osx/boost_system.a)
 
 set(OF_CORE_LIBS
         ${glut_lib}
-        ${LIB_POCO_1} ${LIB_POCO_2} ${LIB_POCO_3} ${LIB_POCO_4} ${LIB_POCO_5} ${LIB_POCO_6} ${LIB_POCO_7} ${LIB_POCO_8} ${LIB_POCO_9} ${LIB_POCO_10} ${LIB_POCO_11}
+        ${LIB_POCO_1} ${LIB_POCO_2} ${LIB_POCO_3} ${LIB_POCO_4} ${LIB_POCO_5} ${LIB_POCO_6}
+        ${LIB_POCO_7} ${LIB_POCO_8} ${LIB_POCO_9} ${LIB_POCO_10} ${LIB_POCO_11}
         ${LIB_TESS}
         ${LIB_GLEW}
         ${LIB_CAIRO1} ${LIB_CAIRO2} ${LIB_CAIRO3}
@@ -176,6 +177,7 @@ set(OF_CORE_LIBS
 # ================================================
 
 # ===================== System Frameworks =====================
+#TODO is this OS version dependend?
 set(FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks)
 
 find_library(accelerate_lib Accelerate)
