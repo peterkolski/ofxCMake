@@ -1,9 +1,3 @@
-
-
-# including all cpp files recursively
-#file( GLOB_RECURSE OFX_OSC_CPP  "${OF_DIRECTORY_ABSOLUTE}/addons/ofxOsc/*.cpp" )
-#message( "Cpp-Tree: ${OFX_OSC_CPP}" )
-
 # TODO Comments
 include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxOsc.cmake )
 include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxXmlSettings.cmake )
@@ -20,3 +14,7 @@ include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxAssimpModelLoader.cma
 # TODO automatic search for addOns .cmake files
 #file( GLOB_RECURSE ALL_ADDON_FILES  "${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/*.cmake" )
 #include( ALL_ADDON_FILES )
+
+# including all cpp files recursively
+#file( GLOB_RECURSE OFX_OSC_CPP  "${OF_DIRECTORY_ABSOLUTE}/addons/ofxOsc/*.cpp" )
+#message( "Cpp-Tree: ${OFX_OSC_CPP}" )

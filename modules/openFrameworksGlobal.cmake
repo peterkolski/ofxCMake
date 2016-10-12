@@ -5,11 +5,11 @@
 get_filename_component( OF_DIRECTORY_ABSOLUTE ${OF_DIRECTORY_BY_USER} ABSOLUTE)
 
 # ----------------------------------------------------------------------------
-# --- Include all internal .cmake files.
+# --- Include all addOn .cmake files.
 # --- Libs are only linked, if set in the project cMakeLists.txt
 # ----------------------------------------------------------------------------
 include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/addOnsInternal.cmake )
-
+include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/addOnsExternal.cmake )
 
 if( APPLE )
     include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/configApple.cmake )
