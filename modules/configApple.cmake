@@ -19,6 +19,20 @@ target_link_libraries(  ${APP_NAME}
                         ${OFX_ADDONS_ACTIVE}
                         )
 
+# --- All addOns into libs/
+set_target_properties(  ${OFX_ADDONS_ACTIVE}
+                        PROPERTIES
+                        LIBRARY_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
+                        ARCHIVE_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
+        )
+
+#install(TARGETS
+#        $<TARGET_FILE:of_shared>
+#        opengl_lib
+#        OFX_ADDONS_ACTIVE
+#        ARCHIVE DESTINATION ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
+#        )
+
 # ================================================
 ADD_CUSTOM_COMMAND(TARGET ${APP_NAME}
         POST_BUILD

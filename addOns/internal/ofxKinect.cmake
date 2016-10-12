@@ -59,8 +59,3 @@ if( APPLE )
 endif()
 
 target_link_libraries(  ofxKinect ${EXTRA_LIBS_KINECT} )
-
-set_target_properties(  ofxKinect PROPERTIES
-#                                LIBRARY_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
-                                ARCHIVE_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
-        )
