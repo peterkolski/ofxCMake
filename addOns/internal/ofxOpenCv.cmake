@@ -33,12 +33,12 @@ add_library(    ofxOpenCv
 if( APPLE )
     find_library( CORE_FOUNDATION_LIB_OPENCV  CoreFoundation)
 #    find_library( IOKIT_LIB_OPENCV  IOKit)
-    set(    ofxOpenCvLib "${OF_DIRECTORY}/addons/ofxOpenCv/libs/opencv/lib/opencv.a" )
+    set(    ofxOpenCvLib "${OF_DIRECTORY}/addons/ofxOpenCv/libs/opencv/lib/osx/opencv.a" )
 
     set(    EXTRA_LIBS_OPENCV
             ${CORE_FOUNDATION_LIB_OPENCV}
 #            ${IOKIT_LIB_OPENCV}
-#            ${ofxOpenCvLib}
+            ${ofxOpenCvLib}
             )
 endif()
 
