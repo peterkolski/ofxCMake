@@ -4,7 +4,7 @@
 # ===================== CMake Settings ===================
 # ========================================================
 cmake_minimum_required(VERSION 2.8.4)
-cmake_policy(SET CMP0042 NEW)
+cmake_policy(SET CMP0002 NEW) #Vers of ofxCMake
 
 # ========================================================
 # ===================== User Settings ====================
@@ -14,7 +14,8 @@ project(        ofCMakeProject )
 set( APP_NAME   ofApp )
 
 # ------------------------ OF Path -----------------------
-set( OF_DIRECTORY "/YOUR_OF_PATH/" )                 # Please put your OF path in here
+# --- If outside the OF stucture, set an absolute OF path
+set( OF_DIRECTORY_BY_USER "../../.." )
 
 # --------------------- Source Files ---------------------
 set( ${APP_NAME}_SOURCE_FILES
@@ -22,7 +23,7 @@ set( ${APP_NAME}_SOURCE_FILES
         src/ofApp.cpp )
 
 
-# ------------------------ AddOns  ------------
+# ------------------------ AddOns  -----------------------
 set( OFX_ADDONS_ACTIVE
         #        ofxXmlSettings
         #        ofxOsc
@@ -31,15 +32,15 @@ set( OFX_ADDONS_ACTIVE
         #        ofxVectorGraphics
         #        ofxThreadedImageLoader
         #        ofxAssimpModelLoader
-        #        ofxKinect (not working)
-        #        ofxOpenCv (not working)
-        #        ofxSvg  (not working)
+        #        ofxKinect
+        #        ofxOpenCv
+        #        ofxSvg
         #        ofxEmscripten (untested)
-)
+                )
 
-# ========================================================
-# ===================== OpenFrameworks ===================
-# ========================================================
-include( ${OF_DIRECTORY}/CMake/modules/openFrameworksGlobal.cmake )
-# ========================================================
+# =========================================================================
+# ============================== OpenFrameworks ===========================
+# =========================================================================
+include( ${OF_DIRECTORY_BY_USER}/CMake/modules/openFrameworksGlobal.cmake )
+# =========================================================================
 
