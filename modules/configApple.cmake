@@ -26,6 +26,7 @@ set_target_properties(  ${OFX_ADDONS_ACTIVE}
                         ARCHIVE_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
         )
 
+#TODO maybe this approach will copy the libs
 #install(TARGETS
 #        $<TARGET_FILE:of_shared>
 #        opengl_lib

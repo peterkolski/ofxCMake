@@ -232,6 +232,19 @@ set_target_properties(of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SO
 set_target_properties(of_shared PROPERTIES OUTPUT_NAME openFrameworks)
 target_link_libraries(of_shared ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS})
 
+#TODO This does not copy the libs
+set_target_properties(  ${openFrameworks}
+        PROPERTIES
+        LIBRARY_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
+#        ARCHIVE_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
+        )
+
+#set_target_properties(  ${static}
+#        PROPERTIES
+#        LIBRARY_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
+#        ARCHIVE_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
+#        )
+
 # TODO Explain the excecutable bindings
 ADD_CUSTOM_COMMAND(TARGET of_shared
         POST_BUILD

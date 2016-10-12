@@ -4,7 +4,7 @@
 # ===================== CMake Settings ===================
 # ========================================================
 cmake_minimum_required(VERSION 2.8.4)
-cmake_policy(SET CMP0002 NEW) #Vers of ofxCMake
+cmake_policy(SET CMP0042 NEW) #Vers of ofxCMake
 
 # ========================================================
 # ===================== User Settings ====================
