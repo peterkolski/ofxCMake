@@ -4,7 +4,7 @@
 
 file(   GLOB_RECURSE
         OFX_VECTORGRAPHICS_CPP
-        "${OF_DIRECTORY}/addons/ofxVectorGraphics/*.cpp"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxVectorGraphics/*.cpp"
         )
 
 # -----------------------------------------------------------------
@@ -12,8 +12,8 @@ file(   GLOB_RECURSE
 # -----------------------------------------------------------------
 
 include_directories(
-        "${OF_DIRECTORY}/addons/ofxVectorGraphics/src"
-        "${OF_DIRECTORY}/addons/ofxVectorGraphics/libs"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxVectorGraphics/src"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxVectorGraphics/libs"
 )
 
 # -----------------------------------------------------------------

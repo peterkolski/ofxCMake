@@ -3,8 +3,8 @@
 # -----------------------------------------------------------------
 
 file( GLOB_RECURSE OFX_MIDI_CPP
-        "${OF_DIRECTORY}/addons/ofxMidi/src/*.cpp"
-        "${OF_DIRECTORY}/addons/ofxMidi/libs/*.cpp"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxMidi/src/*.cpp"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxMidi/libs/*.cpp"
         )
 
 # -----------------------------------------------------------------
@@ -12,9 +12,9 @@ file( GLOB_RECURSE OFX_MIDI_CPP
 # -----------------------------------------------------------------
 
 include_directories(
-        "${OF_DIRECTORY}/addons/ofxMidi/src"
-        "${OF_DIRECTORY}/addons/ofxMidi/src/desktop"
-        "${OF_DIRECTORY}/addons/ofxMidi/libs/rtmidi"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxMidi/src"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxMidi/src/desktop"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxMidi/libs/rtmidi"
         )
 
 # -----------------------------------------------------------------

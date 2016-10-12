@@ -5,7 +5,7 @@
 
 file(   GLOB_RECURSE
         OFX_ASSIMPIMAGELOADER_CPP
-        "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/*.cpp"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxAssimpModelLoader/*.cpp"
         )
 
 # -----------------------------------------------------------------
@@ -13,9 +13,9 @@ file(   GLOB_RECURSE
 # -----------------------------------------------------------------
 
 include_directories(
-        "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/src"
-        "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/libs/assimp/include"
-        "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/libs/assimp/include/assimp/Compiler"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxAssimpModelLoader/src"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxAssimpModelLoader/libs/assimp/include"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxAssimpModelLoader/libs/assimp/include/assimp/Compiler"
                     )
 
 # -----------------------------------------------------------------
@@ -32,7 +32,7 @@ add_library(    ofxAssimpModelLoader
 
 #TODO Libs for other OS (Win & Linux)
 if( APPLE )
-    set(    ofxAssimpLib  "${OF_DIRECTORY}/addons/ofxAssimpModelLoader/libs/assimp/lib/osx/assimp.a" )
+    set(    ofxAssimpLib  "${OF_DIRECTORY_ABSOLUTE}/addons/ofxAssimpModelLoader/libs/assimp/lib/osx/assimp.a" )
     set(    EXTRA_LIBS_ASSIMP
             ${ofxAssimpLib}
             )

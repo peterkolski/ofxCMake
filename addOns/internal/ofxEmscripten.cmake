@@ -4,7 +4,7 @@
 
 file(   GLOB_RECURSE
         OFX_EMSCRIPTEN_CPP
-        "${OF_DIRECTORY}/addons/ofxEmscripten/*.cpp"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxEmscripten/*.cpp"
         )
 
 # -----------------------------------------------------------------
@@ -12,9 +12,9 @@ file(   GLOB_RECURSE
 # -----------------------------------------------------------------
 
 include_directories(
-        "${OF_DIRECTORY}/addons/ofxEmscripten/src"
-        "${OF_DIRECTORY}/addons/ofxEmscripten/libs/html5audio/include"
-        "${OF_DIRECTORY}/addons/ofxEmscripten/libs/html5video/include"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxEmscripten/src"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxEmscripten/libs/html5audio/include"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxEmscripten/libs/html5video/include"
         )
 
 # -----------------------------------------------------------------

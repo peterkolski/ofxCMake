@@ -4,7 +4,7 @@
 
 file(   GLOB_RECURSE
         OFX_SVG_CPP
-        "${OF_DIRECTORY}/addons/ofxSvg/*.cpp"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxSvg/*.cpp"
         )
 
 # -----------------------------------------------------------------
@@ -12,8 +12,8 @@ file(   GLOB_RECURSE
 # -----------------------------------------------------------------
 
 include_directories(
-        "${OF_DIRECTORY}/addons/ofxSvg/src"
-        "${OF_DIRECTORY}/addons/ofxSvg/libs/svgTiny/src"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxSvg/src"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxSvg/libs/svgTiny/src"
         )
 
 # -----------------------------------------------------------------
@@ -29,6 +29,6 @@ add_library(    ofxSvg
 # -----------------------------------------------------------------
 
 set(    EXTRA_LIBS_SVG
-        ${OF_DIRECTORY}/libs/poco/lib/osx/PocoXML.a)
+        ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/osx/PocoXML.a)
 
 target_link_libraries(  ofxSvg ${EXTRA_LIBS_SVG} )

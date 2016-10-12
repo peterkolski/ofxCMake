@@ -4,7 +4,7 @@
 
 file(   GLOB_RECURSE
         OFX_XML_CPP
-        "${OF_DIRECTORY}/addons/ofxXmlSettings/*.cpp"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxXmlSettings/*.cpp"
         )
 
 # -----------------------------------------------------------------
@@ -12,8 +12,8 @@ file(   GLOB_RECURSE
 # -----------------------------------------------------------------
 
 include_directories(
-        "${OF_DIRECTORY}/addons/ofxXmlSettings/src"
-        "${OF_DIRECTORY}/addons/ofxXmlSettings/libs" )
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxXmlSettings/src"
+        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxXmlSettings/libs" )
 
 # -----------------------------------------------------------------
 # --- Set the keyword, so you can simply include the addOn
