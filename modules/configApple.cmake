@@ -13,10 +13,10 @@ add_compile_options(-Wno-deprecated-declarations)
 
 
 # ===================== Compile and Link =================
-add_executable(${APP_NAME} MACOSX_BUNDLE ${${APP_NAME}_SOURCE_FILES})
+add_executable( ${APP_NAME} MACOSX_BUNDLE ${${APP_NAME}_SOURCE_FILES} )
 
 # TODO This into configGlobal
-add_dependencies(${APP_NAME} of_shared)
+add_dependencies (${APP_NAME} of_shared )
 target_link_libraries(  ${APP_NAME}
                         $<TARGET_FILE:of_shared>
                         ${opengl_lib}
