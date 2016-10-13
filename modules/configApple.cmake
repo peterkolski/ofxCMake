@@ -30,3 +30,15 @@ ADD_CUSTOM_COMMAND(TARGET ${APP_NAME}
         ARGS -change "@rpath/libopenFrameworks.dylib" "@loader_path/../Frameworks/libopenFrameworks.dylib" $<TARGET_FILE:${APP_NAME}>
         )
 
+# TODO Explain the excecutable bindings
+ADD_CUSTOM_COMMAND(TARGET of_shared
+        POST_BUILD
+        COMMAND ${CMAKE_INSTALL_NAME_TOOL}
+        ARGS -change ./libfmodex.dylib "@loader_path/libfmodex.dylib" $<TARGET_FILE:of_shared>
+        )
+
+ADD_CUSTOM_COMMAND(TARGET of_shared
+        POST_BUILD
+        COMMAND /bin/cp
+        ARGS ${LIB_FMODEX} ${PROJECT_SOURCE_DIR}/bin/${APP_NAME}.app/Contents/MacOS
+        )

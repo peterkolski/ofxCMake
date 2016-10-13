@@ -68,17 +68,3 @@ set(OF_CORE_FRAMEWORKS
         ${quartzcore_lib}
         ${appkit_lib})
 # =============================================================
-#cmake_policy(SET CMP0042 NEW)
-
-# TODO Explain the excecutable bindings
-ADD_CUSTOM_COMMAND(TARGET of_shared
-        POST_BUILD
-        COMMAND ${CMAKE_INSTALL_NAME_TOOL}
-        ARGS -change ./libfmodex.dylib "@loader_path/libfmodex.dylib" $<TARGET_FILE:of_shared>
-)
-
-ADD_CUSTOM_COMMAND(TARGET of_shared
-        POST_BUILD
-        COMMAND /bin/cp
-        ARGS ${LIB_FMODEX} ${PROJECT_SOURCE_DIR}/bin/${APP_NAME}.app/Contents/MacOS
-)
