@@ -18,16 +18,19 @@ set( OF_CORE_LIBS
 set( OF_SOURCE_FILES
         ${OF_SOURCE_FILES}
         ${ADDON_SOURCE_FILES} )
+
+
 include_directories( ${OF_CORE_HEADERS} ${OF_ADDON_HEADERS} )
+#TODO This into configApple
 set_source_files_properties( ${OF_SOURCE_FILES} PROPERTIES COMPILE_FLAGS "-x objective-c++" )
-add_library( core OBJECT ${OF_SOURCE_FILES} )
 
 # ============================================================================
-# -------------------------------- Properties --------------------------------
-
+# ----------------------------- Setting Libraries ----------------------------
+add_library( core       OBJECT ${OF_SOURCE_FILES} )
 add_library( static     STATIC $<TARGET_OBJECTS:core> )
 add_library( of_shared  SHARED $<TARGET_OBJECTS:core> )
 
+# -------------------------------- Properties --------------------------------
 set_target_properties( static    PROPERTIES OUTPUT_NAME openFrameworks)
 set_target_properties( of_shared PROPERTIES OUTPUT_NAME openFrameworks)
 
@@ -49,8 +52,8 @@ set_target_properties(  ${openFrameworks}
 set_target_properties( of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin/${APP_NAME}.app/Contents/Frameworks)
 
 #TODO is OF_CORE_FRAMEWORKS OSX specific?
-target_link_libraries(  static ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS} )
-target_link_libraries(  of_shared ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS} )
+target_link_libraries(  static      ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS} )
+target_link_libraries(  of_shared   ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS} )
 
 #set_target_properties(  ${static}
 #        PROPERTIES
