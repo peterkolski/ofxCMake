@@ -8,8 +8,8 @@ include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxSvg.cmake )
 include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxVectorGraphics.cmake )
 include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxOpenCv.cmake )
 include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxThreadedImageLoader.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxEmscripten.cmake )
 include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxAssimpModelLoader.cmake )
+#include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxEmscripten.cmake )
 
 # TODO automatic search for addOns .cmake files
 #file( GLOB_RECURSE ALL_ADDON_FILES  "${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/*.cmake" )
