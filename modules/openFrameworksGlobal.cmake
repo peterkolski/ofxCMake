@@ -85,3 +85,49 @@ set(OF_SOURCE_FILES
         )
 # TODO do I install them into /libs from here?
 # ========================================================
+
+
+# ===================== Include Dirs =====================
+set(HEADER_OF_0 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks)
+set(HEADER_OF_1 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/3d)
+set(HEADER_OF_2 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/app)
+set(HEADER_OF_3 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/communication)
+set(HEADER_OF_4 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/events)
+set(HEADER_OF_5 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/gl)
+set(HEADER_OF_6 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/graphics)
+set(HEADER_OF_7 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/math)
+set(HEADER_OF_8 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound)
+set(HEADER_OF_9 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/types)
+set(HEADER_OF_10 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/utils)
+set(HEADER_OF_11 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video)
+set(HEADER_FREETYPE ${OF_DIRECTORY_ABSOLUTE}/libs/freetype/include)
+set(HEADER_FREETYPE2 ${OF_DIRECTORY_ABSOLUTE}/libs/freetype/include/freetype2)
+set(HEADER_POCO ${OF_DIRECTORY_ABSOLUTE}/libs/poco/include)
+set(HEADER_FMODEX ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/include)
+set(HEADER_GLEW ${OF_DIRECTORY_ABSOLUTE}/libs/glew/include)
+set(HEADER_FREEIMAGE ${OF_DIRECTORY_ABSOLUTE}/libs/FreeImage/include)
+set(HEADER_TESS2 ${OF_DIRECTORY_ABSOLUTE}/libs/tess2/include)
+set(HEADER_CAIRO ${OF_DIRECTORY_ABSOLUTE}/libs/cairo/include/cairo)
+set(HEADER_RTAUDIO ${OF_DIRECTORY_ABSOLUTE}/libs/rtAudio/include)
+set(HEADER_GLFW ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/include)
+set(HEADER_SSL ${OF_DIRECTORY_ABSOLUTE}/libs/openssl/include)
+set(HEADER_UTF8 ${OF_DIRECTORY_ABSOLUTE}/libs/utf8cpp/include)
+set(HEADER_BOOST ${OF_DIRECTORY_ABSOLUTE}/libs/boost/include)
+
+
+set( OF_CORE_HEADERS
+        ${HEADER_OF_0} ${HEADER_OF_1} ${HEADER_OF_2} ${HEADER_OF_3} ${HEADER_OF_4} ${HEADER_OF_5}
+        ${HEADER_OF_6} ${HEADER_OF_7} ${HEADER_OF_8} ${HEADER_OF_9} ${HEADER_OF_10} ${HEADER_OF_11}
+        ${HEADER_POCO}
+        ${HEADER_FREETYPE} ${HEADER_FREETYPE2}
+        ${HEADER_FMODEX}
+        ${HEADER_GLEW}
+        ${HEADER_FREEIMAGE}
+        ${HEADER_TESS2}
+        ${HEADER_CAIRO}
+        ${HEADER_RTAUDIO}
+        ${HEADER_GLFW}
+        ${HEADER_SSL}
+        ${HEADER_UTF8}
+        ${HEADER_BOOST})
+# ========================================================
