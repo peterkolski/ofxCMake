@@ -29,8 +29,12 @@ else()
 endif()
 
 # ============================================================================
-# ---------------------------- OS SPECIFIC CONFIGURATION ---------------------
+# -------------------------------- OF CONFIGURATION --------------------------
 # ----------------------------------------------------------------------------
+include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/configGlobal.cmake)
+
+
+# --------------------------------- OS SPECIFIC ------------------------------
 if( APPLE )
     include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/configApple.cmake )
 elseif( UNIX )

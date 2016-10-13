@@ -40,3 +40,4 @@ ADD_CUSTOM_COMMAND(TARGET ${APP_NAME}
         COMMAND ${CMAKE_INSTALL_NAME_TOOL}
         ARGS -change "@rpath/libopenFrameworks.dylib" "@loader_path/../Frameworks/libopenFrameworks.dylib" $<TARGET_FILE:${APP_NAME}>
         )
+
