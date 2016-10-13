@@ -21,8 +21,6 @@ set( OF_SOURCE_FILES
 
 
 include_directories( ${OF_CORE_HEADERS} ${OF_ADDON_HEADERS} )
-#TODO This into configApple
-set_source_files_properties( ${OF_SOURCE_FILES} PROPERTIES COMPILE_FLAGS "-x objective-c++" )
 
 # ============================================================================
 # ----------------------------- Setting Libraries ----------------------------
