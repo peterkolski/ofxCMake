@@ -73,19 +73,7 @@ set(OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQtUtils.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQuickTimeGrabber.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQuickTimePlayer.cpp
-
-        # TODO: Not working right now
-        # ======== For Windows ========
-        # ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofDirectShowGrabber.cpp
-        # ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofDirectShowPlayer.cpp
-        # ======== For Linux ========
-        # ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofGstUtils.cpp
-        # ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofGstVideoGrabber.cpp
-        # ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofGstVideoPlayer.cpp
         )
-# TODO do I install them into /libs from here?
-# ========================================================
-
 
 # ===================== Include Dirs =====================
 set(HEADER_OF_0 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks)
@@ -114,7 +102,7 @@ set(HEADER_SSL ${OF_DIRECTORY_ABSOLUTE}/libs/openssl/include)
 set(HEADER_UTF8 ${OF_DIRECTORY_ABSOLUTE}/libs/utf8cpp/include)
 set(HEADER_BOOST ${OF_DIRECTORY_ABSOLUTE}/libs/boost/include)
 
-
+# --- Put them into one list
 set( OF_CORE_HEADERS
         ${HEADER_OF_0} ${HEADER_OF_1} ${HEADER_OF_2} ${HEADER_OF_3} ${HEADER_OF_4} ${HEADER_OF_5}
         ${HEADER_OF_6} ${HEADER_OF_7} ${HEADER_OF_8} ${HEADER_OF_9} ${HEADER_OF_10} ${HEADER_OF_11}
@@ -130,4 +118,3 @@ set( OF_CORE_HEADERS
         ${HEADER_SSL}
         ${HEADER_UTF8}
         ${HEADER_BOOST})
-# ========================================================
