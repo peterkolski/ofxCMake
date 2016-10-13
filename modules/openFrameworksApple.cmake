@@ -68,7 +68,7 @@ set(OF_CORE_FRAMEWORKS
         ${quartzcore_lib}
         ${appkit_lib})
 # =============================================================
-
+#cmake_policy(SET CMP0042 NEW)
 
 # TODO Explain the excecutable bindings
 ADD_CUSTOM_COMMAND(TARGET of_shared

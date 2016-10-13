@@ -1,7 +1,7 @@
 # ============================================================================
 # --- Set a absolute path name, is case the project used a relative one
 get_filename_component( OF_DIRECTORY_ABSOLUTE ${OF_DIRECTORY_BY_USER} ABSOLUTE)
-
+#cmake_policy(SET CMP0042 NEW)
 
 
 # ============================================================================
