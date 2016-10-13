@@ -33,15 +33,18 @@ set_target_properties(  ${openFrameworks}
         #        ARCHIVE_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
         )
 
-add_library(            static STATIC $<TARGET_OBJECTS:core>)
-set_target_properties(  static PROPERTIES OUTPUT_NAME openFrameworks)
-#TODO is OF_CORE_FRAMEWORKS OSX specific?
-target_link_libraries(  static ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS})
 
-add_library(of_shared SHARED $<TARGET_OBJECTS:core>)
-set_target_properties(of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin/${APP_NAME}.app/Contents/Frameworks)
-set_target_properties(of_shared PROPERTIES OUTPUT_NAME openFrameworks)
-target_link_libraries(of_shared ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS})
+
+add_library( static     STATIC $<TARGET_OBJECTS:core> )
+add_library( of_shared  SHARED $<TARGET_OBJECTS:core> )
+
+set_target_properties( static    PROPERTIES OUTPUT_NAME openFrameworks)
+set_target_properties( of_shared PROPERTIES OUTPUT_NAME openFrameworks)
+set_target_properties( of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin/${APP_NAME}.app/Contents/Frameworks)
+
+#TODO is OF_CORE_FRAMEWORKS OSX specific?
+target_link_libraries(  static ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS} )
+target_link_libraries(  of_shared ${OF_CORE_FRAMEWORKS} ${OF_ADDON_FRAMEWORKS} ${OF_CORE_LIBS} )
 
 #set_target_properties(  ${static}
 #        PROPERTIES
