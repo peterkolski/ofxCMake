@@ -13,26 +13,19 @@ add_compile_options(-Wno-deprecated-declarations)
 # ===================== Compile and Link =================
 add_executable(${APP_NAME} MACOSX_BUNDLE ${${APP_NAME}_SOURCE_FILES})
 add_dependencies(${APP_NAME} of_shared)
+
+# TODO This into configGlobal
 target_link_libraries(  ${APP_NAME}
                         $<TARGET_FILE:of_shared>
                         ${opengl_lib}
                         ${OFX_ADDONS_ACTIVE}
                         )
 
-# --- All addOns into libs/
-set_target_properties(  ${OFX_ADDONS_ACTIVE}
-                        PROPERTIES
-                        LIBRARY_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
-                        ARCHIVE_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
-        )
+# ============================================================================
+# -------------------------------- Properties ---------------------------
 
-#TODO maybe this approach will copy the libs
-#install(TARGETS
-#        $<TARGET_FILE:of_shared>
-#        opengl_lib
-#        OFX_ADDONS_ACTIVE
-#        ARCHIVE DESTINATION ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
-#        )
+
+
 
 # ================================================
 ADD_CUSTOM_COMMAND(TARGET ${APP_NAME}
