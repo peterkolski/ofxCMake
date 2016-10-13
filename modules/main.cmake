@@ -51,6 +51,7 @@ endif()
 # ============================================================================
 # ------------------------------- APP CONFIGURATION --------------------------
 # ============================================================================
-set_target_properties(  ${APP_NAME}
-        PROPERTIES  RUNTIME_OUTPUT_DIRECTORY    ${PROJECT_SOURCE_DIR}/bin
+set_target_properties( ${APP_NAME}
+        PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY    ${PROJECT_SOURCE_DIR}/bin
         )
