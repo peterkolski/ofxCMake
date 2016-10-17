@@ -1,7 +1,7 @@
 # CMake for OpenFrameworks
 CMake is a universal, plattform independent build system. It tells which source files and libraries of OpenFrameworks and your project have to be compiled together so you have your application. CMake is supported e.g. by the IDEs: CLion, QTCreator, KDevelop.
 
-CMake is a meta system, so it can generate different build systems like Visual Studio Projects, xCode, make etc. It can also create installers like DEP, RPM and MSI. 
+CMake is a meta system, so it can generate different build systems like Visual Studio Projects, xCode, make etc. It can also create installers like DEB, RPM and MSI. 
 
 ### Note
 This is not an ofxAddOn in the normal way.
