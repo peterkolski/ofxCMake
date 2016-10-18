@@ -15,14 +15,13 @@ list( APPEND OF_SOURCE_FILES
         )
 
 # ============================================================================
-# ----------------------------- Include Folders-------------------------------
+# --------------------------- Include Folders --------------------------------
 set(HEADER_GLEW ${OF_DIRECTORY_ABSOLUTE}/libs/glew/include)
 set(HEADER_SSL ${OF_DIRECTORY_ABSOLUTE}/libs/openssl/include)
 set(HEADER_CAIRO ${OF_DIRECTORY_ABSOLUTE}/libs/cairo/include/cairo)
 set(HEADER_RTAUDIO ${OF_DIRECTORY_ABSOLUTE}/libs/rtAudio/include)
 set(HEADER_BOOST ${OF_DIRECTORY_ABSOLUTE}/libs/boost/include)
 
-# ============================================================================
 # ------------------ Putting the includes into one list ----------------------
 list( APPEND OF_CORE_HEADERS
         ${HEADER_GLEW}
