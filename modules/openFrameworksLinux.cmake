@@ -40,14 +40,23 @@ set( OF_CORE_LIBS
         )
 
 # ============================================================================
-# ============================================================================
-
+# ----------------------------- System Frameworks ----------------------------
 include( FindPkgConfig )
 include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/FindGStreamer.cmake )
 include( FindOpenAL )
 
-set( PLATFORM_SHARED_LIBRARIES ${LIB_FMODEX} )
-set( PLATFORM_LIBRARIES
+PKG_SEARCH_MODULE( ALSA "REQUIRED" alsa )
+PKG_SEARCH_MODULE( CAIRO "REQUIRED" cairo )
+
+include_directories( ${CAIRO_INCLUDE_DIRS} )
+include_directories( ${OPENAL_INCLUDE_DIRS} )
+include_directories( ${ALSA_INCLUDE_DIRS} )
+include_directories( ${GSTREAMER_APP_INCLUDE_DIRS} )
+include_directories( ${GSTREAMER_BASE_INCLUDE_DIRS} )
+include_directories( ${GSTREAMER_VIDEO_INCLUDE_DIRS} )
+
+
+set( OF_CORE_FRAMEWORKS
         z
         gstapp-1.0
         gstvideo-1.0
@@ -90,18 +99,7 @@ set( PLATFORM_LIBRARIES
         pthread
         freeimage
         boost_filesystem
-        boost_system )
+        boost_system
+        ${LIB_FMODEX}       # SHARED
+        )
 
-PKG_SEARCH_MODULE( ALSA "REQUIRED" alsa )
-PKG_SEARCH_MODULE( CAIRO "REQUIRED" cairo )
-
-include_directories( ${CAIRO_INCLUDE_DIRS} )
-include_directories( ${OPENAL_INCLUDE_DIRS} )
-include_directories( ${ALSA_INCLUDE_DIRS} )
-include_directories( ${GSTREAMER_APP_INCLUDE_DIRS} )
-include_directories( ${GSTREAMER_BASE_INCLUDE_DIRS} )
-include_directories( ${GSTREAMER_VIDEO_INCLUDE_DIRS} )
-
-
-# ===================== Shared lib =====================
-set( OF_CORE_FRAMEWORKS ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
