@@ -1,19 +1,5 @@
 # --- Was defined OS specifically before
-set( OF_CORE_LIBS
-        ${glut_lib}
-        ${LIB_POCO_1} ${LIB_POCO_2} ${LIB_POCO_3} ${LIB_POCO_4} ${LIB_POCO_5} ${LIB_POCO_6}
-        ${LIB_POCO_7} ${LIB_POCO_8} ${LIB_POCO_9} ${LIB_POCO_10} ${LIB_POCO_11}
-        ${LIB_TESS}
-        ${LIB_GLEW}
-        ${LIB_CAIRO1} ${LIB_CAIRO2} ${LIB_CAIRO3}
-        ${LIB_FMODEX}
-        ${LIB_RTAUDIO}
-        ${LIB_OPENSSL1} ${LIB_OPENSSL2}
-        ${LIB_GLFW}
-        ${LIB_FREEIMAGE}
-        ${LIB_FREETYPE}
-        ${LIB_BOOST_1} ${LIB_BOOST_3}
-        )
+
 
 set( OF_SOURCE_FILES
         ${OF_SOURCE_FILES}

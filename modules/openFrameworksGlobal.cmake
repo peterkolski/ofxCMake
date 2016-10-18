@@ -89,27 +89,18 @@ set(HEADER_TESS2 ${OF_DIRECTORY_ABSOLUTE}/libs/tess2/include)
 set(HEADER_GLFW ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/include)
 set(HEADER_UTF8 ${OF_DIRECTORY_ABSOLUTE}/libs/utf8cpp/include)
 
-set(HEADER_GLEW ${OF_DIRECTORY_ABSOLUTE}/libs/glew/include)
-set(HEADER_SSL ${OF_DIRECTORY_ABSOLUTE}/libs/openssl/include)
-set(HEADER_CAIRO ${OF_DIRECTORY_ABSOLUTE}/libs/cairo/include/cairo)
-set(HEADER_RTAUDIO ${OF_DIRECTORY_ABSOLUTE}/libs/rtAudio/include)
-set(HEADER_BOOST ${OF_DIRECTORY_ABSOLUTE}/libs/boost/include)
 
 
 # ============================================================================
-# ---------------------- Putting them into one list --------------------------
+# ------------------ Putting the includes into one list ----------------------
 set( OF_CORE_HEADERS
         ${HEADER_OF_0} ${HEADER_OF_1} ${HEADER_OF_2} ${HEADER_OF_3} ${HEADER_OF_4} ${HEADER_OF_5}
         ${HEADER_OF_6} ${HEADER_OF_7} ${HEADER_OF_8} ${HEADER_OF_9} ${HEADER_OF_10} ${HEADER_OF_11}
         ${HEADER_POCO}
         ${HEADER_FREETYPE} ${HEADER_FREETYPE2}
         ${HEADER_FMODEX}
-        ${HEADER_GLEW}
         ${HEADER_FREEIMAGE}
         ${HEADER_TESS2}
-        ${HEADER_CAIRO}
-        ${HEADER_RTAUDIO}
         ${HEADER_GLFW}
-        ${HEADER_SSL}
         ${HEADER_UTF8}
-        ${HEADER_BOOST})
+        )

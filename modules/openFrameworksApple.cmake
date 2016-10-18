@@ -15,8 +15,26 @@ list( APPEND OF_SOURCE_FILES
         )
 
 # ============================================================================
+# ----------------------------- Include Folders-------------------------------
+set(HEADER_GLEW ${OF_DIRECTORY_ABSOLUTE}/libs/glew/include)
+set(HEADER_SSL ${OF_DIRECTORY_ABSOLUTE}/libs/openssl/include)
+set(HEADER_CAIRO ${OF_DIRECTORY_ABSOLUTE}/libs/cairo/include/cairo)
+set(HEADER_RTAUDIO ${OF_DIRECTORY_ABSOLUTE}/libs/rtAudio/include)
+set(HEADER_BOOST ${OF_DIRECTORY_ABSOLUTE}/libs/boost/include)
+
+# ============================================================================
+# ------------------ Putting the includes into one list ----------------------
+list( APPEND OF_CORE_HEADERS
+        ${HEADER_GLEW}
+        ${HEADER_SSL}
+        ${HEADER_CAIRO}
+        ${HEADER_RTAUDIO}
+        ${HEADER_BOOST}
+        )
+
+# ============================================================================
 # --------------------------------- Libraries --------------------------------
-set(glut_lib    "${OF_DIRECTORY_ABSOLUTE}/libs/glut/lib/osx/GLUT.framework")
+set(LIB_GLUT    "${OF_DIRECTORY_ABSOLUTE}/libs/glut/lib/osx/GLUT.framework")
 set(LIB_FMODEX  ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/lib/osx/libfmodex.dylib)
 set(LIB_GLFW    ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/lib/osx/glfw3.a)
 set(LIB_FREEIMAGE ${OF_DIRECTORY_ABSOLUTE}/libs/FreeImage/lib/osx/freeimage.a)
@@ -44,7 +62,21 @@ set(LIB_BOOST_1 ${OF_DIRECTORY_ABSOLUTE}/libs/boost/lib/osx/boost.a)
 set(LIB_BOOST_2 ${OF_DIRECTORY_ABSOLUTE}/libs/boost/lib/osx/boost_filesystem.a)
 set(LIB_BOOST_3 ${OF_DIRECTORY_ABSOLUTE}/libs/boost/lib/osx/boost_system.a)
 
-
+set( OF_CORE_LIBS
+        ${LIB_GLUT}
+        ${LIB_POCO_1} ${LIB_POCO_2} ${LIB_POCO_3} ${LIB_POCO_4} ${LIB_POCO_5} ${LIB_POCO_6}
+        ${LIB_POCO_7} ${LIB_POCO_8} ${LIB_POCO_9} ${LIB_POCO_10} ${LIB_POCO_11}
+        ${LIB_TESS}
+        ${LIB_GLEW}
+        ${LIB_CAIRO1} ${LIB_CAIRO2} ${LIB_CAIRO3}
+        ${LIB_FMODEX}
+        ${LIB_RTAUDIO}
+        ${LIB_OPENSSL1} ${LIB_OPENSSL2}
+        ${LIB_GLFW}
+        ${LIB_FREEIMAGE}
+        ${LIB_FREETYPE}
+        ${LIB_BOOST_1} ${LIB_BOOST_3}
+        )
 # ============================================================================
 # ----------------------------- System Frameworks ----------------------------
 set(FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks)
@@ -86,3 +118,4 @@ set(OF_CORE_FRAMEWORKS
         ${quartzcore_lib}
         ${appkit_lib})
 # =============================================================
+
