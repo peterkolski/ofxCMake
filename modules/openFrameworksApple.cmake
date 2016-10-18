@@ -1,4 +1,21 @@
-# ===================== Libs =====================
+# ============================================================================
+# ---------------------------- Source Files ----------------------------------
+list( APPEND OF_SOURCE_FILES
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofBaseSoundStream.cpp
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofSoundStream.cpp
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofAVFoundationVideoPlayer.m
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofAVFoundationPlayer.mm
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQTKitGrabber.mm
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQTKitMovieRenderer.m
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQTKitPlayer.mm
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQtUtils.cpp
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQuickTimeGrabber.cpp
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQuickTimePlayer.cpp
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofRtAudioSoundStream.cpp
+        )
+
+# ============================================================================
+# --------------------------------- Libraries --------------------------------
 set(glut_lib    "${OF_DIRECTORY_ABSOLUTE}/libs/glut/lib/osx/GLUT.framework")
 set(LIB_FMODEX  ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/lib/osx/libfmodex.dylib)
 set(LIB_GLFW    ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/lib/osx/glfw3.a)
@@ -28,7 +45,8 @@ set(LIB_BOOST_2 ${OF_DIRECTORY_ABSOLUTE}/libs/boost/lib/osx/boost_filesystem.a)
 set(LIB_BOOST_3 ${OF_DIRECTORY_ABSOLUTE}/libs/boost/lib/osx/boost_system.a)
 
 
-# ===================== System Frameworks =====================
+# ============================================================================
+# ----------------------------- System Frameworks ----------------------------
 set(FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks)
 
 find_library(accelerate_lib     Accelerate)

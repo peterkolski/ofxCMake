@@ -1,3 +1,6 @@
+# ============================================================================
+# ---------------------------- Source Files ----------------------------------
+
 set(OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/3d/of3dPrimitives.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/3d/of3dUtils.cpp
@@ -41,13 +44,10 @@ set(OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/math/ofQuaternion.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/math/ofVec2f.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/math/ofVec4f.cpp
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofBaseSoundStream.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofFmodSoundPlayer.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofOpenALSoundPlayer.cpp
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofRtAudioSoundStream.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofSoundBuffer.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofSoundPlayer.cpp
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofSoundStream.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/types/ofBaseTypes.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/types/ofColor.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/types/ofParameter.cpp
@@ -65,17 +65,9 @@ set(OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/utils/ofXml.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofVideoGrabber.cpp
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofVideoPlayer.cpp
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofAVFoundationVideoPlayer.m
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofAVFoundationPlayer.mm
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQTKitGrabber.mm
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQTKitMovieRenderer.m
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQTKitPlayer.mm
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQtUtils.cpp
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQuickTimeGrabber.cpp
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofQuickTimePlayer.cpp
         )
-
-# ===================== Include Dirs =====================
+# ============================================================================
+# ----------------------------- Include Folders-------------------------------
 set(HEADER_OF_0 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks)
 set(HEADER_OF_1 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/3d)
 set(HEADER_OF_2 ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/app)
@@ -92,17 +84,20 @@ set(HEADER_FREETYPE ${OF_DIRECTORY_ABSOLUTE}/libs/freetype/include)
 set(HEADER_FREETYPE2 ${OF_DIRECTORY_ABSOLUTE}/libs/freetype/include/freetype2)
 set(HEADER_POCO ${OF_DIRECTORY_ABSOLUTE}/libs/poco/include)
 set(HEADER_FMODEX ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/include)
-set(HEADER_GLEW ${OF_DIRECTORY_ABSOLUTE}/libs/glew/include)
 set(HEADER_FREEIMAGE ${OF_DIRECTORY_ABSOLUTE}/libs/FreeImage/include)
 set(HEADER_TESS2 ${OF_DIRECTORY_ABSOLUTE}/libs/tess2/include)
+set(HEADER_GLFW ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/include)
+set(HEADER_UTF8 ${OF_DIRECTORY_ABSOLUTE}/libs/utf8cpp/include)
+
+set(HEADER_GLEW ${OF_DIRECTORY_ABSOLUTE}/libs/glew/include)
+set(HEADER_SSL ${OF_DIRECTORY_ABSOLUTE}/libs/openssl/include)
 set(HEADER_CAIRO ${OF_DIRECTORY_ABSOLUTE}/libs/cairo/include/cairo)
 set(HEADER_RTAUDIO ${OF_DIRECTORY_ABSOLUTE}/libs/rtAudio/include)
-set(HEADER_GLFW ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/include)
-set(HEADER_SSL ${OF_DIRECTORY_ABSOLUTE}/libs/openssl/include)
-set(HEADER_UTF8 ${OF_DIRECTORY_ABSOLUTE}/libs/utf8cpp/include)
 set(HEADER_BOOST ${OF_DIRECTORY_ABSOLUTE}/libs/boost/include)
 
-# --- Put them into one list
+
+# ============================================================================
+# ---------------------- Putting them into one list --------------------------
 set( OF_CORE_HEADERS
         ${HEADER_OF_0} ${HEADER_OF_1} ${HEADER_OF_2} ${HEADER_OF_3} ${HEADER_OF_4} ${HEADER_OF_5}
         ${HEADER_OF_6} ${HEADER_OF_7} ${HEADER_OF_8} ${HEADER_OF_9} ${HEADER_OF_10} ${HEADER_OF_11}
