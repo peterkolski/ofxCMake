@@ -1,9 +1,9 @@
 # CMake for OpenFrameworks
-CMake is a universal, plattform independent build system. It tells which source files and libraries of OpenFrameworks and your project have to be compiled together so you have your application. CMake is supported e.g. by the IDEs: CLion, QTCreator, KDevelop.
+[CMake](https://cmake.org) is a universal, plattform independent build system. It tells which source files and libraries of OpenFrameworks, your project and addOns have to be compiled together so you have your application. CMake is supported e.g. by the IDEs: [CLion](https://www.jetbrains.com/clion/), [QTCreator](https://www.qt.io/ide/), [KDevelop](https://www.kdevelop.org).
 
 CMake is a meta system, so it can generate different build systems like Visual Studio Projects, xCode, make etc. It can also create installers like DEB, RPM and MSI. 
 
-### Note
+### *Note*
 This is not an ofxAddOn in the normal way.
 So do not just copy it into the `of/addons/` folder and expect it to work.
 
