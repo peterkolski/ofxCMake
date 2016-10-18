@@ -44,7 +44,7 @@ set( OF_CORE_LIBS
 # from linux64.cmake
 
 include(FindPkgConfig)
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/FindGStreamer)
+include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/FindGStreamer.cmake)
 include(FindOpenAL)
 
 
@@ -110,14 +110,7 @@ include_directories( ${GSTREAMER_APP_INCLUDE_DIRS} )
 include_directories( ${GSTREAMER_BASE_INCLUDE_DIRS} )
 include_directories( ${GSTREAMER_VIDEO_INCLUDE_DIRS} )
 
-set( OF_SOURCE_FILES ${OF_SOURCE_FILES} ${ADDON_SOURCE_FILES} )
-set_source_files_properties( ${OF_SOURCE_FILES} PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -fPIC" )
-include_directories( ${OF_CORE_HEADERS} ${OF_ADDON_HEADERS} )
-add_library( core OBJECT ${OF_SOURCE_FILES} )
 
 # ===================== Shared lib =====================
-add_library( of_shared SHARED $<TARGET_OBJECTS:core> )
-set_target_properties( of_shared PROPERTIES POSITION_INDEPENDENT_CODE on )
-set_target_properties( of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin/${APP_NAME}.app/Contents/Frameworks )
-set_target_properties( of_shared PROPERTIES OUTPUT_NAME openFrameworks )
+
 target_link_libraries( of_shared  ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
