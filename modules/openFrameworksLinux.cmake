@@ -104,6 +104,4 @@ include_directories( ${GSTREAMER_VIDEO_INCLUDE_DIRS} )
 
 
 # ===================== Shared lib =====================
-set( OF_CORE_LIBS ${PLATFORM_STATIC_LIBS} ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
-
-target_link_libraries( of_shared  ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
+set( OF_CORE_FRAMEWORKS ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
