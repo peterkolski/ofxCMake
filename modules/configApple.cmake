@@ -1,5 +1,6 @@
 
-# ===================== Compiler Flags ===================
+# ============================================================================
+# ------------------------------ Compiler Flags ------------------------------
 set(CMAKE_C_COMPILER "/usr/bin/clang")
 set(CMAKE_C_FLAGS "") # -x objective-c
 
@@ -12,18 +13,20 @@ set(CMAKE_OSX_ARCHITECTURES x86_64)
 add_compile_options(-Wno-deprecated-declarations)
 
 
-# ===================== Compile and Link =================
+# ============================================================================
+# ------------------------------ Compile and Link ----------------------------
 add_executable( ${APP_NAME} MACOSX_BUNDLE ${${APP_NAME}_SOURCE_FILES} )
 
-# TODO This into configGlobal?
-add_dependencies (${APP_NAME} of_shared )
 target_link_libraries(  ${APP_NAME}
                         $<TARGET_FILE:of_shared>
                         ${opengl_lib}
                         ${OFX_ADDONS_ACTIVE}
                         )
+# ------------ global  - end of main
+add_dependencies (${APP_NAME} of_shared )
 
-# ================================================
+
+# ============================================================================
 ADD_CUSTOM_COMMAND(TARGET ${APP_NAME}
         POST_BUILD
         COMMAND ${CMAKE_INSTALL_NAME_TOOL}
