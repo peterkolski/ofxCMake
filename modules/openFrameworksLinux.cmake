@@ -44,37 +44,80 @@ set( OF_CORE_LIBS
 # from linux64.cmake
 
 include(FindPkgConfig)
-include(FindGStreamer)
+include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/FindGStreamer)
 include(FindOpenAL)
 
 
-set(PLATFORM_LIBRARIES glut)
-set(PLATFORM_LIBRARIES ${PLATFORM_LIBRARIES} X11 Xrandr Xxf86vm dl Xinerama Xcursor Xi)
-set(PLATFORM_LIBRARIES ${PLATFORM_LIBRARIES} freeimage boost_filesystem boost_system)
+set( PLATFORM_LIBRARIES glut)
+set( PLATFORM_LIBRARIES ${PLATFORM_LIBRARIES} X11 Xrandr Xxf86vm dl Xinerama Xcursor Xi)
+set( PLATFORM_LIBRARIES ${PLATFORM_LIBRARIES} freeimage boost_filesystem boost_system)
 
-set(LIB_FMODEX ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/lib/linux64/libfmodex.so)
-set(PLATFORM_SHARED_LIBRARIES ${LIB_FMODEX})
-set(PLATFORM_LIBRARIES z gstapp-1.0 gstvideo-1.0 gstbase-1.0 gstreamer-1.0 udev fontconfig freetype sndfile openal ssl crypto pulse-simple pulse asound GLEW GLU GL pangocairo-1.0 gdk_pixbuf-2.0 cairo-gobject pango-1.0 cairo gtk-3 gdk-3 atk-1.0 gio-2.0 gobject-2.0 glib-2.0 mpg123 glut X11 Xrandr Xxf86vm dl Xinerama Xcursor Xi dl pthread freeimage boost_filesystem boost_system)
-set(OF_CORE_LIBS ${PLATFORM_STATIC_LIBS} ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES})
+set( LIB_FMODEX ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/lib/linux64/libfmodex.so)
+set( PLATFORM_SHARED_LIBRARIES ${LIB_FMODEX})
+set( PLATFORM_LIBRARIES z
+        gstapp-1.0
+        gstvideo-1.0
+        gstbase-1.0
+        gstreamer-1.0
+        udev
+        fontconfig
+        freetype
+        sndfile
+        openal
+        ssl
+        crypto
+        pulse-simple
+        pulse
+        asound
+        GLEW
+        GLU
+        GL
+        pangocairo-1.0
+        gdk_pixbuf-2.0
+        cairo-gobject
+        pango-1.0
+        cairo
+        gtk-3
+        gdk-3
+        atk-1.0
+        gio-2.0
+        gobject-2.0
+        glib-2.0
+        mpg123
+        glut
+        X11
+        Xrandr
+        Xxf86vm
+        dl
+        Xinerama
+        Xcursor
+        Xi
+        dl
+        pthread
+        freeimage
+        boost_filesystem
+        boost_system )
 
-PKG_SEARCH_MODULE(ALSA "REQUIRED" alsa)
-PKG_SEARCH_MODULE(CAIRO "REQUIRED" cairo)
+set( OF_CORE_LIBS ${PLATFORM_STATIC_LIBS} ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
 
-include_directories(${CAIRO_INCLUDE_DIRS})
-include_directories(${OPENAL_INCLUDE_DIRS})
-include_directories(${ALSA_INCLUDE_DIRS})
-include_directories(${GSTREAMER_APP_INCLUDE_DIRS})
-include_directories(${GSTREAMER_BASE_INCLUDE_DIRS})
-include_directories(${GSTREAMER_VIDEO_INCLUDE_DIRS})
+PKG_SEARCH_MODULE( ALSA "REQUIRED" alsa )
+PKG_SEARCH_MODULE( CAIRO "REQUIRED" cairo )
 
-set(OF_SOURCE_FILES ${OF_SOURCE_FILES} ${ADDON_SOURCE_FILES})
-set_source_files_properties(${OF_SOURCE_FILES} PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -fPIC")
-include_directories(${OF_CORE_HEADERS} ${OF_ADDON_HEADERS})
-add_library(core OBJECT ${OF_SOURCE_FILES})
+include_directories( ${CAIRO_INCLUDE_DIRS} )
+include_directories( ${OPENAL_INCLUDE_DIRS} )
+include_directories( ${ALSA_INCLUDE_DIRS} )
+include_directories( ${GSTREAMER_APP_INCLUDE_DIRS} )
+include_directories( ${GSTREAMER_BASE_INCLUDE_DIRS} )
+include_directories( ${GSTREAMER_VIDEO_INCLUDE_DIRS} )
+
+set( OF_SOURCE_FILES ${OF_SOURCE_FILES} ${ADDON_SOURCE_FILES} )
+set_source_files_properties( ${OF_SOURCE_FILES} PROPERTIES COMPILE_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -fPIC" )
+include_directories( ${OF_CORE_HEADERS} ${OF_ADDON_HEADERS} )
+add_library( core OBJECT ${OF_SOURCE_FILES} )
 
 # ===================== Shared lib =====================
-add_library(of_shared SHARED $<TARGET_OBJECTS:core>)
-set_target_properties(of_shared PROPERTIES POSITION_INDEPENDENT_CODE on)
-set_target_properties(of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin/${APP_NAME}.app/Contents/Frameworks)
-set_target_properties(of_shared PROPERTIES OUTPUT_NAME openFrameworks)
-target_link_libraries(of_shared  ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES})
+add_library( of_shared SHARED $<TARGET_OBJECTS:core> )
+set_target_properties( of_shared PROPERTIES POSITION_INDEPENDENT_CODE on )
+set_target_properties( of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin/${APP_NAME}.app/Contents/Frameworks )
+set_target_properties( of_shared PROPERTIES OUTPUT_NAME openFrameworks )
+target_link_libraries( of_shared  ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
