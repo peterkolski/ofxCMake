@@ -28,6 +28,8 @@ set(LIB_POCO_9 ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoXML.a)
 set(LIB_POCO_11 ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoJSON.a)
 set(LIB_TESS ${OF_DIRECTORY_ABSOLUTE}/libs/tess2/lib/linux64/libtess2.a)
 
+# ---- shared
+set( LIB_FMODEX ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/lib/linux64/libfmodex.so)
 
 set( OF_CORE_LIBS
         ${LIB_GLFW}
@@ -40,21 +42,13 @@ set( OF_CORE_LIBS
 # ============================================================================
 # ============================================================================
 
-
-# from linux64.cmake
-
 include(FindPkgConfig)
 include( ${OF_DIRECTORY_ABSOLUTE}/CMake/modules/FindGStreamer.cmake)
 include(FindOpenAL)
 
-
-set( PLATFORM_LIBRARIES glut)
-set( PLATFORM_LIBRARIES ${PLATFORM_LIBRARIES} X11 Xrandr Xxf86vm dl Xinerama Xcursor Xi)
-set( PLATFORM_LIBRARIES ${PLATFORM_LIBRARIES} freeimage boost_filesystem boost_system)
-
-set( LIB_FMODEX ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/lib/linux64/libfmodex.so)
 set( PLATFORM_SHARED_LIBRARIES ${LIB_FMODEX})
-set( PLATFORM_LIBRARIES z
+set( PLATFORM_LIBRARIES
+        z
         gstapp-1.0
         gstvideo-1.0
         gstbase-1.0
@@ -98,8 +92,6 @@ set( PLATFORM_LIBRARIES z
         boost_filesystem
         boost_system )
 
-set( OF_CORE_LIBS ${PLATFORM_STATIC_LIBS} ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
-
 PKG_SEARCH_MODULE( ALSA "REQUIRED" alsa )
 PKG_SEARCH_MODULE( CAIRO "REQUIRED" cairo )
 
@@ -112,5 +104,6 @@ include_directories( ${GSTREAMER_VIDEO_INCLUDE_DIRS} )
 
 
 # ===================== Shared lib =====================
+set( OF_CORE_LIBS ${PLATFORM_STATIC_LIBS} ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
 
 target_link_libraries( of_shared  ${PLATFORM_LIBRARIES} ${PLATFORM_SHARED_LIBRARIES} )
