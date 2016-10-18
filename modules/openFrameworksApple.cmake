@@ -98,7 +98,7 @@ find_library(avfoundation_lib   AVFoundation)
 find_library(quartzcore_lib     QuartzCore)
 find_library(appkit_lib         AppKit)
 
-set(OF_CORE_FRAMEWORKS
+set( OF_CORE_FRAMEWORKS
         ${accelerate_lib}
         ${iokit_lib}
         ${agl_lib}
@@ -115,6 +115,6 @@ set(OF_CORE_FRAMEWORKS
         ${coremedia_lib}
         ${avfoundation_lib}
         ${quartzcore_lib}
-        ${appkit_lib})
-# =============================================================
+        ${appkit_lib}
+        )
 
