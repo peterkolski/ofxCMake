@@ -1,3 +1,5 @@
+![ofxCMake Logo](ofxCMake_Logo.jpg)
+
 # CMake for OpenFrameworks
 [CMake](https://cmake.org) is a universal, plattform independent build system. It tells which source files and libraries of OpenFrameworks, your project and addOns have to be compiled together so you have your application. CMake is supported e.g. by the IDEs: [CLion](https://www.jetbrains.com/clion/), [QTCreator](https://www.qt.io/ide/), [KDevelop](https://www.kdevelop.org).
 
