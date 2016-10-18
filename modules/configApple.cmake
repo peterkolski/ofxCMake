@@ -23,7 +23,7 @@ target_link_libraries(  ${APP_NAME}
                         ${OFX_ADDONS_ACTIVE}
                         )
 # ------------ global  - end of main
-add_dependencies( ${APP_NAME} of_shared )
+
 
 
 # ============================================================================

@@ -51,6 +51,7 @@ endif()
 # ============================================================================
 # ------------------------------- APP CONFIGURATION --------------------------
 # ============================================================================
+add_dependencies( ${APP_NAME} of_shared )
 set_target_properties( ${APP_NAME}
         PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY    ${PROJECT_SOURCE_DIR}/bin
