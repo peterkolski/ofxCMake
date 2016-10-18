@@ -12,8 +12,5 @@ add_executable( ${APP_NAME} ${SOURCE_FILES} )
 set_target_properties( of_shared PROPERTIES POSITION_INDEPENDENT_CODE on )
 target_link_libraries( ${APP_NAME}
                         $<TARGET_FILE:of_shared>
-                        ${OF_CORE_LIBS}
                         ${OFX_ADDONS_ACTIVE}
                     )
-
-# global - end of main
