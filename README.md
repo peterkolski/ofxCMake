@@ -42,6 +42,7 @@ So do not just copy it into the `of/addons/` folder and expect it to work.
 	$ make -j4
 	```
 - **Generate IDE files:** e.g. for xCode `cmake -G Xcode ..`
+
 ### CLion IDE
 1. Prepare your project as explained above
 2. Choose via CLion in the 'Open File or Project' the `CMakeLists.txt`
