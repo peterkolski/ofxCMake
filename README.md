@@ -12,7 +12,13 @@ So do not just copy it into the `of/addons/` folder and expect it to work.
 ## Installation
 1. Find your main openframeworks folder (e.g. `~/of/`)
 2. Create there a subfolder `CMake`
-3. Clone or extract the git files and folders into this folder.
+3. Clone (or extract) the git files and folders into this folder.
+   
+   ```bash
+	$ cd of
+	$ mkdir CMake
+	$ git clone https://github.com/BildPeter/ofxCMake.git CMake
+	```
 4. In the file `of/CMake/project/CMakeLists.txt` change the path of your OF folder. 
 
 ## Usage
@@ -27,8 +33,15 @@ So do not just copy it into the `of/addons/` folder and expect it to work.
 - Go into that folder 
 - type `cmake ..`
 - **Compile:**  `make` (optional `-j4` to compile with 4 cores)
-- **Generate IDE files:** e.g. for xCode `cmake -G Xcode ..`
 
+	```bash
+	$ cd of/apps/myApps/newApp
+	$ mkdir build
+	$ cd build
+	$ cmake ..
+	$ make -j4
+	```
+- **Generate IDE files:** e.g. for xCode `cmake -G Xcode ..`
 ### CLion IDE
 1. Prepare your project as explained above
 2. Choose via CLion in the 'Open File or Project' the `CMakeLists.txt`
