@@ -74,6 +74,8 @@ So do not just copy it into the `of/addons/` folder and expect it to work.
 	- The addOn files are not placed in the addOns itself (but in `of/addons/`). It would be better, if each addOn has it's .cmake file already included. But this would mean, that the developer deliver it in their source code. 
 
 ## Compatibility
-At the moment (Oct 2016) only Mac OS is supported. The infrastructure for other OS (Linux, Windows) is already set up.
+At the moment (Oct 2016) only Mac OS is fully tested. 
+
+The infrastructure for other OS (Linux, Windows) is already set up.
 
 Tested on MacOS 10.11.6 with cMake 3.2.1
