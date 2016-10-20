@@ -16,5 +16,5 @@ include( ${OF_CMAKE_ADDONS}internal/ofxAssimpModelLoader.cmake )
 #include( ALL_ADDON_FILES )
 
 # including all cpp files recursively
-#file( GLOB_RECURSE OFX_OSC_CPP  "${OF_DIRECTORY_ABSOLUTE}/addons/ofxOsc/*.cpp" )
+#file( GLOB_RECURSE OFX_OSC_CPP  "${OF_CMAKE_ADDONS}ofxOsc/*.cpp" )
 #message( "Cpp-Tree: ${OFX_OSC_CPP}" )
