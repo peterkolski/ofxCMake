@@ -1,16 +1,13 @@
-# ============================================================================
-# --- Set a absolute path name, is case the project used a relative one
-get_filename_component( OF_DIRECTORY_ABSOLUTE ${OF_DIRECTORY_BY_USER} ABSOLUTE)
-#cmake_policy(SET CMP0042 NEW)
-
-
 
 # ============================================================================
 # ---------------------------------- PATHS -----------------------------------
 # ============================================================================
+# --- Set a absolute path name, is case the project used a relative one
+get_filename_component( OF_DIRECTORY_ABSOLUTE ${OF_DIRECTORY_BY_USER} ABSOLUTE)
 set( CMAKE_PATH_NAME    addons/ofxCMake )
 set( OF_CMAKE_MODULES   ${OF_DIRECTORY_ABSOLUTE}/${CMAKE_PATH_NAME}/modules )
 set( OF_CMAKE_ADDONS    ${OF_DIRECTORY_ABSOLUTE}/${CMAKE_PATH_NAME}/addOns )
+
 
 
 # ============================================================================
