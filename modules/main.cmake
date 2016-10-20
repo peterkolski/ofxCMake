@@ -8,9 +8,9 @@ get_filename_component( OF_DIRECTORY_ABSOLUTE ${OF_DIRECTORY_BY_USER} ABSOLUTE)
 # ============================================================================
 # ---------------------------------- PATHS -----------------------------------
 # ============================================================================
-set( CMAKE_PATH_NAME    CMake )
+set( CMAKE_PATH_NAME    addons/ofxCMake )
 set( OF_CMAKE_MODULES   ${OF_DIRECTORY_ABSOLUTE}/${CMAKE_PATH_NAME}/modules/ )
-message( WARNING "Path: " ${OF_CMAKE_MODULES} )
+
 
 # ============================================================================
 # --------------------------------- ADDONS -----------------------------------
