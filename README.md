@@ -10,21 +10,20 @@ This is not an ofxAddOn in the normal way.
 So do not just copy it into the `of/addons/` folder and expect it to work.
 
 ## Installation
-1. Find your main openframeworks folder (e.g. `~/of/`)
-2. Create there a subfolder `CMake`
-3. Clone (or extract) the git files and folders into this folder.
+1. Find your openframeworks addon folder (e.g. `~/of/addons`)
+2. Clone the git files
    
    ```bash
-	$ cd of
-	$ mkdir CMake
-	$ git clone https://github.com/BildPeter/ofxCMake.git CMake
+	$ cd of/addons
+	$ git clone https://github.com/BildPeter/ofxCMake.git
 	```
-4. In the file `of/CMake/project/CMakeLists.txt` change the path of your OF folder. 
+2.1. **Alternative:** Extract in `of/addons` and rename into `ofxCMake` 
+3. In the file `ofxCMake/project/CMakeLists.txt` change the path of your OF folder. 
 
 ## Usage
 
 ### Preperation
-1. Copy the file `of/CMake/project/CMakeLists.txt` into the folder of your openframeworks project 
+1. Copy the file `ofxCMake/project/CMakeLists.txt` into the folder of your openframeworks project 
 2. In the `CMakeLists.txt` change name of your application `APP_NAME`
 3. If you have more source files than the standard `main.cpp`, `ofApp.cpp` – be sure to include them in the section "Source Files" of the 
 
@@ -59,10 +58,10 @@ So do not just copy it into the `of/addons/` folder and expect it to work.
 #### External Addons – *Creation*
 *This approach is static and centralised. It is not a perfect solution, but it lets your openFramework file structure untouched, if you want to update OpenFrameworks or remove CMake. Future approach might include a configuration file in each new AddOn*
 
-- Create an addon-file `ofxNAME.cmake` from the templates in `CMake/addOns`
-- Copy the file into `CMake/addOns/external`
-- Add the path to the file `CMake/modules/addOnsExternal.cmake` – like e.g. 
-`include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/external/ofxNAME.cmake )`
+- Create an addon-file `ofxNAME.cmake` from the templates in `ofxCMake/addOns`
+- Copy the file into `ofxCMake/addOns/external`
+- Add the path to the file `ofxCMake/modules/addOnsExternal.cmake` – like e.g. 
+`include( ${OF_CMAKE_ADDONS}/external/ofxNAME.cmake )`
 - Add the name of your addOn into your projects `CMakeLists.txt` in the section `AddOns`
 
 ## Development Philosophy
