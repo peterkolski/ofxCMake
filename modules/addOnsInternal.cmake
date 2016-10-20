@@ -1,18 +1,18 @@
 # TODO Comments
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxOsc.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxXmlSettings.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxGui.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxKinect.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxNetwork.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxSvg.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxVectorGraphics.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxOpenCv.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxThreadedImageLoader.cmake )
-include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxAssimpModelLoader.cmake )
-#include( ${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/internal/ofxEmscripten.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxOsc.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxXmlSettings.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxGui.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxKinect.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxNetwork.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxSvg.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxVectorGraphics.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxOpenCv.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxThreadedImageLoader.cmake )
+include( ${OF_CMAKE_ADDONS}internal/ofxAssimpModelLoader.cmake )
+#include( ${OF_CMAKE_ADDONS}internal/ofxEmscripten.cmake )
 
 # TODO automatic search for addOns .cmake files
-#file( GLOB_RECURSE ALL_ADDON_FILES  "${OF_DIRECTORY_ABSOLUTE}/CMake/addOns/*.cmake" )
+#file( GLOB_RECURSE ALL_ADDON_FILES  "${OF_CMAKE_ADDONS}*.cmake" )
 #include( ALL_ADDON_FILES )
 
 # including all cpp files recursively

@@ -10,6 +10,7 @@ get_filename_component( OF_DIRECTORY_ABSOLUTE ${OF_DIRECTORY_BY_USER} ABSOLUTE)
 # ============================================================================
 set( CMAKE_PATH_NAME    addons/ofxCMake )
 set( OF_CMAKE_MODULES   ${OF_DIRECTORY_ABSOLUTE}/${CMAKE_PATH_NAME}/modules/ )
+set( OF_CMAKE_ADDONS    ${OF_DIRECTORY_ABSOLUTE}/${CMAKE_PATH_NAME}/addOns/ )
 
 
 # ============================================================================
