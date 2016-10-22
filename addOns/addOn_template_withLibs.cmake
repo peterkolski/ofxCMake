@@ -16,7 +16,7 @@
 
 file(   GLOB_RECURSE
         OFX_NAME_CPP                            # Set internal placeholder name (unique one)
-        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxNAME/*.cpp"     # Set the directory of your Addon
+        "${OF_CMAKE_ADDONS}/ofxNAME/*.cpp"     # Set the directory of your Addon
         )
 
 # -----------------------------------------------------------------
@@ -24,7 +24,7 @@ file(   GLOB_RECURSE
 # -----------------------------------------------------------------
 
 include_directories(
-        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxNAME/src"   # Set the directory of your Addon
+        "${OF_CMAKE_ADDONS}/ofxNAME/src"   # Set the directory of your Addon
 )
 
 # -----------------------------------------------------------------
@@ -44,7 +44,7 @@ add_library(    ofxNAME              # Set the name of the addOn
 
 #if( APPLE )
 #    find_library( CORE_FOUNDATION_LIB_NAME  CoreFoundation)
-#    set( compiledLib    "${OF_DIRECTORY_ABSOLUTE}/addons/ofxNAME/lib/myLib.a" )
+#    set( compiledLib    "${OF_CMAKE_ADDONS}/ofxNAME/lib/myLib.a" )
 #    set(    EXTRA_LIBS_NAME
 #            ${CORE_FOUNDATION_LIB_NAME}
 #            ${compiledLib}

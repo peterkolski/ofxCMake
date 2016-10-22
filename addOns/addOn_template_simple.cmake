@@ -15,8 +15,8 @@
 # -----------------------------------------------------------------
 
 file(   GLOB_RECURSE
-        OFX_NAME_CPP                            # Set internal placeholder name (unique one)
-        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxNAME/*.cpp"     # Set the directory of your Addon
+        OFX_NAME_CPP                           # Set internal placeholder name (unique one)
+        "${OF_CMAKE_ADDONS}/ofxNAME/*.cpp"     # Set the directory of your Addon
         )
 
 # -----------------------------------------------------------------
@@ -24,7 +24,7 @@ file(   GLOB_RECURSE
 # -----------------------------------------------------------------
 
 include_directories(
-                    "${OF_DIRECTORY_ABSOLUTE}/addons/ofxNAME/src"   # Set the directory of your Addon
+                    "${OF_CMAKE_ADDONS}/ofxNAME/src"   # Set the directory of your Addon
                     )
 
 # -----------------------------------------------------------------
