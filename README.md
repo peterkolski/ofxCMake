@@ -10,24 +10,26 @@ This is not an ofxAddOn in the normal way.
 So do not just copy it into the `of/addons/` folder and expect it to work.
 
 ## Installation
-1. Find your openframeworks addon folder (e.g. `~/of/addons`)
-2. Clone the git files
+1. Clone the git files in your openframeworks addon folder
    
    ```bash
 	$ cd of/addons
 	$ git clone https://github.com/BildPeter/ofxCMake.git
 	```
-2.1. **Alternative:** Extract in `of/addons` and rename into `ofxCMake` 
-3. In the file `ofxCMake/project/CMakeLists.txt` change the path of your OF folder. 
+ **Alternative:** Extract in `of/addons` and rename into `ofxCMake` 
+2. In the file `ofxCMake/project/CMakeLists.txt` change the path of your OF folder. 
 
 ## Usage
 
 ### Preperation
-1. Copy the file `ofxCMake/project/CMakeLists.txt` into the folder of your openframeworks project 
-2. In the `CMakeLists.txt` change name of your application `APP_NAME`
-3. If you have more source files than the standard `main.cpp`, `ofApp.cpp` – be sure to include them in the section "Source Files" of the 
+- Copy the file `ofxCMake/project/CMakeLists.txt` into the folder of your openframeworks project 
 
-### Command Line
+In this `CMakeLists.txt`:
+
+- If you have more source files than the standard `main.cpp`, `ofApp.cpp` – be sure to include them in the section "Source Files"
+- *Optional:* Change name of your application `APP_NAME`
+
+### Command Line Compilation
 - Create a new directory in your project folder – e.g.: `mkdir build`
 - Go into that folder 
 - type `cmake ..`
@@ -56,13 +58,14 @@ So do not just copy it into the `of/addons/` folder and expect it to work.
 - Uncomment the internal addOn, you want to use in the `CMakeLists.txt` of your project
 
 #### External Addons – *Creation*
-*This approach is static and centralised. It is not a perfect solution, but it lets your openFramework file structure untouched, if you want to update OpenFrameworks or remove CMake. Future approach might include a configuration file in each new AddOn*
-
 - Create an addon-file `ofxNAME.cmake` from the templates in `ofxCMake/addOns`
 - Copy the file into `ofxCMake/addOns/external`
 - Add the path to the file `ofxCMake/modules/addOnsExternal.cmake` – like e.g. 
 `include( ${OF_CMAKE_ADDONS}/external/ofxNAME.cmake )`
 - Add the name of your addOn into your projects `CMakeLists.txt` in the section `AddOns`
+
+**Note:**
+*This approach is static and centralised. It is not a perfect solution, but it lets your openFramework file structure untouched, if you want to update OpenFrameworks or remove CMake. Future approach might include a configuration file in each new AddOn*
 
 ## Development Philosophy
 - The project file `CMakeLists.txt` is simplified for readability.
