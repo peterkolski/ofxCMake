@@ -36,6 +36,13 @@ set_target_properties(  static PROPERTIES ARCHIVE_OUTPUT_DIRECTORY    ${OF_CMAKE
 set_target_properties(  of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${OF_CMAKE_LIBS} )
 set_target_properties(  of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${OF_CMAKE_LIBS} )
 
+install( TARGETS static
+         LIBRARY DESTINATION ${OF_CMAKE_LIBS}
+         ARCHIVE DESTINATION ${OF_CMAKE_LIBS})
+
+install( TARGETS of_shared
+        LIBRARY DESTINATION ${OF_CMAKE_LIBS}
+        ARCHIVE DESTINATION ${OF_CMAKE_LIBS})
 
 set_target_properties( of_shared
         PROPERTIES
