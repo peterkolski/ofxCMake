@@ -26,15 +26,16 @@ set_target_properties( of_shared PROPERTIES OUTPUT_NAME openFrameworks)
 # -------------------------- Copy OF Libs into CMake/libs --------------------
 set_target_properties(  ${OFX_ADDONS_ACTIVE}
         PROPERTIES
-        LIBRARY_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
-        ARCHIVE_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
+        LIBRARY_OUTPUT_DIRECTORY    ${OF_CMAKE_LIBS}
+        ARCHIVE_OUTPUT_DIRECTORY    ${OF_CMAKE_LIBS}
         )
 
 #TODO This does not copy the libs
-set_target_properties(  static
-        PROPERTIES
-        ARCHIVE_OUTPUT_DIRECTORY    ${OF_DIRECTORY_ABSOLUTE}/CMake/libs/
-        )
+set_target_properties(  static PROPERTIES LIBRARY_OUTPUT_DIRECTORY    ${OF_CMAKE_LIBS} )
+set_target_properties(  static PROPERTIES ARCHIVE_OUTPUT_DIRECTORY    ${OF_CMAKE_LIBS} )
+set_target_properties(  of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${OF_CMAKE_LIBS} )
+set_target_properties(  of_shared PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${OF_CMAKE_LIBS} )
+
 
 set_target_properties( of_shared
         PROPERTIES
