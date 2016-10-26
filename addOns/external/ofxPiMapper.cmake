@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------
-# --- Script to search for all the .cpp files in the chosen folder
+# --- Set the name of your AddOn
 # -----------------------------------------------------------------
 
 set( NAME_ADDON     ofxPiMapper )
