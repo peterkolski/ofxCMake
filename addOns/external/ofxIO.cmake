@@ -27,7 +27,11 @@ add_library(  ${NAME_ADDON}   STATIC
         ${OFX_ADDON_CPP}
         ${OFX_ADDON_CC}
         ${OFX_ADDON_C} )
-#message( WARNING "CPP ${NAME_ADDON}: ${OFX_ADDON_C}" )
+
+#find_source_files( OFX_ADDON_SOURCE PATH_LIBS_ABSOLUTE )
+#add_library( ${NAME_ADDON}   STATIC ${OFX_ADDON_SOURCE} )
+
+#message( WARNING "CPP ${NAME_ADDON}: ${OFX_ADDON_CPP}" )
 
 # -----------------------------------------------------------------
 # ---------------------------- HEADERS ----------------------------
@@ -39,7 +43,7 @@ include_directories( ${HEADERS_SOURCE} )
 find_header_directories( HEADERS_LIBS ${PATH_LIBS_ABSOLUTE} )
 include_directories( ${HEADERS_LIBS} )
 
-message( WARNING "Header paths ${NAME_ADDON}: ${HEADERS_LIBS}" )
+#message( WARNING "Header paths ${NAME_ADDON}: ${HEADERS_SOURCE}" )
 
 
 # -----------------------------------------------------------------
