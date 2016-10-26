@@ -31,10 +31,10 @@ add_library(  ${NAME_ADDON}   STATIC   ${OFX_ADDON_CPP} )
 # ---------------------------- HEADERS ----------------------------
 # -----------------------------------------------------------------
 
-HEADER_DIRECTORIES( HEADERS_SOURCE ${PATH_SOURCE_ABSOLUTE} )
+find_header_directories( HEADERS_SOURCE ${PATH_SOURCE_ABSOLUTE} )
 include_directories( ${HEADERS_SOURCE} )
 
-HEADER_DIRECTORIES( HEADERS_LIBS ${PATH_LIBS_ABSOLUTE} )
+find_header_directories( HEADERS_LIBS ${PATH_LIBS_ABSOLUTE} )
 include_directories( ${HEADERS_LIBS} )
 
 message( WARNING "Header paths ${NAME_ADDON}: ${HEADERS_LIBS}" )

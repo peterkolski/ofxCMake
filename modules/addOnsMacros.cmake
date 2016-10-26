@@ -12,7 +12,7 @@ endmacro( include_external_addOn )
 
 
 # ---- Find all include directories
-MACRO(HEADER_DIRECTORIES return_list PATH)
+MACRO( find_header_directories return_list PATH)
     FILE(GLOB_RECURSE new_list ${PATH}/*.h)
     SET(dir_list "")
     FOREACH(file_path ${new_list})
