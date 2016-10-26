@@ -12,7 +12,7 @@ endmacro( include_external_addOn )
 
 
 # ---- Find all include directories
-MACRO( find_header_directories return_list PATH)
+MACRO( find_header_directories return_list PATH )
     FILE(GLOB_RECURSE new_list ${PATH}/*.h)
     SET(dir_list "")
     FOREACH(file_path ${new_list})
@@ -22,3 +22,11 @@ MACRO( find_header_directories return_list PATH)
     LIST(REMOVE_DUPLICATES dir_list)
     SET(${return_list} ${dir_list})
 ENDMACRO()
+
+# ---- Find all source files
+macro( find_source_files return_list PATH )
+    file( GLOB_RECURSE   FILES_CPP   "${PATH_LIBS}/*.cpp" )
+    file( GLOB_RECURSE   FILES_CC    "${PATH_LIBS}/*.cc" )
+    file( GLOB_RECURSE   FILES_C     "${PATH_LIBS}/*.c" )
+    set( ${return_list} ${FILES_CPP} ${FILES_CC} ${FILES_C} )
+endmacro()
