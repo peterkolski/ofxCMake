@@ -25,8 +25,8 @@ ENDMACRO()
 
 # ---- Find all source files
 macro( find_source_files return_list PATH )
-    file( GLOB_RECURSE   FILES_CPP   "${PATH_LIBS}/*.cpp" )
-    file( GLOB_RECURSE   FILES_CC    "${PATH_LIBS}/*.cc" )
-    file( GLOB_RECURSE   FILES_C     "${PATH_LIBS}/*.c" )
+    file( GLOB_RECURSE   FILES_CPP   "${PATH}/*.cpp" )
+    file( GLOB_RECURSE   FILES_CC    "${PATH}/*.cc" )
+    file( GLOB_RECURSE   FILES_C     "${PATH}/*.c" )
     set( ${return_list} ${FILES_CPP} ${FILES_CC} ${FILES_C} )
 endmacro()
