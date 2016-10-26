@@ -19,6 +19,7 @@ set( OF_CMAKE_LIBS      ${OF_DIRECTORY_ABSOLUTE}/${CMAKE_PATH_NAME}/libs )
 # --- Include all addOn .cmake files.
 # --- Libs are only linked, if set in the project cMakeLists.txt
 # ============================================================================
+include( ${OF_CMAKE_MODULES}/addOnsMacros.cmake )
 include( ${OF_CMAKE_MODULES}/addOnsInternal.cmake )
 include( ${OF_CMAKE_MODULES}/addOnsExternal.cmake )
 
