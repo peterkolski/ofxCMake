@@ -2,15 +2,22 @@
 # --- Script to search for all the .cpp files in the chosen folder
 # -----------------------------------------------------------------
 
-file(   GLOB_RECURSE
-        OFX_PIMAPPER_CPP
-        "${OF_DIRECTORY_ABSOLUTE}/addons/ofxPiMapper/src/*.cpp" )
+set( NAME_ADDON     ofxPiMapper )
+#set( PATH_SOURCE    ${OF_DIRECTORY_ABSOLUTE}/addons/${NAME_ADDON}/src )
+#message( WARNING "Path: ${PATH_SOURCE}")
+
+# -----------------------------------------------------------------
+
+
+file( GLOB_RECURSE   OFX_PIMAPPER_CPP   "${OF_DIRECTORY_ABSOLUTE}/addons/${NAME_ADDON}/src/*.cpp" )
+
+#message( WARNING "Paths: ${OFX_PIMAPPER_CPP}" )
 
 # -----------------------------------------------------------------
 # --- Set ALL directories of the addOn, which contain .h files
 # -----------------------------------------------------------------
 
-HEADER_DIRECTORIES( headerList ${OF_DIRECTORY_ABSOLUTE}/addons/ofxPiMapper/src )
+HEADER_DIRECTORIES( headerList ${OF_DIRECTORY_ABSOLUTE}/addons/${NAME_ADDON}/src )
 
 include_directories( ${headerList} )
 
@@ -21,6 +28,4 @@ include_directories( ${headerList} )
 # -----------------------------------------------------------------
 
 
-add_library(    ofxPiMapper
-        STATIC
-        ${OFX_PIMAPPER_CPP} )
+add_library(  ${NAME_ADDON}   STATIC   ${OFX_PIMAPPER_CPP} )
