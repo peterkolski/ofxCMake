@@ -37,13 +37,14 @@ add_library(  ${NAME_ADDON}   STATIC
 # ---------------------------- HEADERS ----------------------------
 # -----------------------------------------------------------------
 
-find_header_directories( HEADERS_SOURCE ${PATH_SOURCE_ABSOLUTE} )
-include_directories( ${HEADERS_SOURCE} )
-
-find_header_directories( HEADERS_LIBS ${PATH_LIBS_ABSOLUTE} )
-include_directories( ${HEADERS_LIBS} )
-
-#message( WARNING "Header paths ${NAME_ADDON}: ${HEADERS_SOURCE}" )
+include_directories(
+        /Users/sonneundasche/programming/of/addons/ofxIO/src
+        /Users/sonneundasche/programming/of/addons/ofxIO/libs/alphanum/include
+        /Users/sonneundasche/programming/of/addons/ofxIO/libs/cpp-lru-cache/include
+        /Users/sonneundasche/programming/of/addons/ofxIO/libs/json/include
+        /Users/sonneundasche/programming/of/addons/ofxIO/libs/lz4/src
+        /Users/sonneundasche/programming/of/addons/ofxIO/libs/ofxIO/include
+        /Users/sonneundasche/programming/of/addons/ofxIO/libs/snappy/src )
 
 
 # -----------------------------------------------------------------
