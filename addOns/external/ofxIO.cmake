@@ -20,9 +20,14 @@ get_filename_component( PATH_LIBS_ABSOLUTE ${PATH_LIBS} ABSOLUTE)
 # ---------------------------- SOURCE -----------------------------
 # -----------------------------------------------------------------
 
-file( GLOB_RECURSE   OFX_ADDON_CPP   "${PATH_SOURCE_ABSOLUTE}/*.cpp" )
-add_library(  ${NAME_ADDON}   STATIC   ${OFX_ADDON_CPP} )
-#message( WARNING "CPP ${NAME_ADDON}: ${OFX_ADDON_CPP}" )
+file( GLOB_RECURSE   OFX_ADDON_CPP   "${PATH_LIBS}/*.cpp" )
+file( GLOB_RECURSE   OFX_ADDON_CC    "${PATH_LIBS}/*.cc" )
+file( GLOB_RECURSE   OFX_ADDON_C     "${PATH_LIBS}/*.c" )
+add_library(  ${NAME_ADDON}   STATIC
+        ${OFX_ADDON_CPP}
+        ${OFX_ADDON_CC}
+        ${OFX_ADDON_C} )
+#message( WARNING "CPP ${NAME_ADDON}: ${OFX_ADDON_C}" )
 
 # -----------------------------------------------------------------
 # ---------------------------- HEADERS ----------------------------
