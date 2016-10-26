@@ -1,3 +1,4 @@
+#==================================================================
 # ---- activate external addOn
 macro( include_external_addOn NAME_ADDON )
     if( ${NAME_ADDON} IN_LIST OFX_ADDONS_ACTIVE )
@@ -9,6 +10,8 @@ macro( include_external_addOn NAME_ADDON )
         endif()
     endif()
 endmacro( include_external_addOn )
+
+#==================================================================
 
 # TODO Find also .hpp files
 # ---- Find all include directories
@@ -22,6 +25,8 @@ MACRO( find_header_directories return_list PATH )
     LIST(REMOVE_DUPLICATES dir_list)
     SET(${return_list} ${dir_list})
 ENDMACRO()
+
+#==================================================================
 
 # TODO DOES NOT WORK YET
 # ---- Find all source files

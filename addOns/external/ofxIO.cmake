@@ -28,11 +28,6 @@ add_library(  ${NAME_ADDON}   STATIC
         ${OFX_ADDON_CC}
         ${OFX_ADDON_C} )
 
-#find_source_files( OFX_ADDON_SOURCE PATH_LIBS_ABSOLUTE )
-#add_library( ${NAME_ADDON}   STATIC ${OFX_ADDON_SOURCE} )
-
-#message( WARNING "CPP ${NAME_ADDON}: ${OFX_ADDON_CPP}" )
-
 # -----------------------------------------------------------------
 # ---------------------------- HEADERS ----------------------------
 # -----------------------------------------------------------------
