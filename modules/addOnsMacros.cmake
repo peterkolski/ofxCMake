@@ -10,7 +10,7 @@ macro( include_external_addOn NAME_ADDON )
     endif()
 endmacro( include_external_addOn )
 
-
+# TODO Find also .hpp files
 # ---- Find all include directories
 MACRO( find_header_directories return_list PATH )
     FILE(GLOB_RECURSE new_list ${PATH}/*.h)
@@ -23,6 +23,7 @@ MACRO( find_header_directories return_list PATH )
     SET(${return_list} ${dir_list})
 ENDMACRO()
 
+# TODO DOES NOT WORK YET
 # ---- Find all source files
 macro( find_source_files return_list PATH )
     file( GLOB_RECURSE   FILES_CPP   "${PATH}/*.cpp" )
