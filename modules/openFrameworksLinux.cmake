@@ -4,7 +4,7 @@ set( IS_ARM FALSE)
 if ( CMAKE_SYSTEM_PROCESSOR STREQUAL armv7l)
     set( IS_ARM TRUE )
 endif ()
-message( WARNING "Arch: ${CMAKE_SYSTEM_PROCESSOR} -> ${IS_ARM}")
+message( STATUS "Arch: ${CMAKE_SYSTEM_PROCESSOR} -> ${IS_ARM}")
 
 
 # ============================================================================
@@ -17,10 +17,10 @@ list( APPEND OF_SOURCE_FILES
 
 if( IS_ARM )
     list(APPEND OF_SOURCE_FILES
-            "${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppEGLWindow.cpp" )
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppEGLWindow.cpp )
 else()
     list(APPEND OF_SOURCE_FILES
-            "${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppGLFWWindow.cpp" )
+            ${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppGLFWWindow.cpp )
 endif()
 
 # ============================================================================
