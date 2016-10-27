@@ -16,9 +16,9 @@ list( APPEND OF_SOURCE_FILES
         )
 
 if( IS_ARM )
-    list(APPEND OF_SOURCE_FILES
-        ${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppEGLWindow.cpp )
-else()
+#    list(APPEND OF_SOURCE_FILES
+#        ${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppEGLWindow.cpp )
+#else()
     list(APPEND OF_SOURCE_FILES
             ${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppGLFWWindow.cpp )
 endif()
