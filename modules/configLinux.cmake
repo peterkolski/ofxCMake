@@ -45,32 +45,14 @@ target_link_libraries( ${APP_NAME}
 #
 #
 #
-#
-#if( IS_ARM )
-#    find_package(OpenGLES REQUIRED)
-#else()
-#    find_package(OpenGL REQUIRED)
-#endif()
-#
-#
-#
-#
-#if( IS_ARM )
-#    list(APPEND OPENFRAMEWORKS_INCLUDE_DIRS
-#            ${EGL_INCLUDE_DIR}
-#            ${OPENGLES2_INCLUDE_DIR}
-#        )
-#    # Assuming Raspberry Pi 2 and Raspbian
-#    list(APPEND OPENFRAMEWORKS_INCLUDE_DIRS
-#            /opt/vc/include
-#            /opt/vc/include/IL
-#            /opt/vc/include/interface/vcos/pthreads
-#            /opt/vc/include/interface/vmcs_host/linux
-#            )
-#endif()
-#
-#
-#
+
+
+
+
+
+
+
+
 #if( IS_ARM )
 #    set(ARCH_FLAG "-march=armv7-a -mfpu=vfp -mfloat-abi=hard")
 #elseif(ARCH_BIT MATCHES 32)
