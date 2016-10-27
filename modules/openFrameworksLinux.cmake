@@ -6,6 +6,17 @@ list( APPEND OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofGstVideoPlayer.cpp
         )
 
+if(OF_PLATFORM MATCHES armv7) // TODO Woher die var? OF_PLATFORM
+    list(APPEND OPENFRAMEWORKS_SOURCES
+            "${OF_ROOT_DIR}/src/openframeworks/app/ofAppEGLWindow.cpp"
+            )
+else()
+    list(APPEND OPENFRAMEWORKS_SOURCES
+            "${OF_ROOT_DIR}/src/openframeworks/app/ofAppGLFWWindow.cpp"
+
+            )
+endif()
+
 # ============================================================================
 # --------------------------- Include Folders --------------------------------
 set(HEADER_KISS ${OF_DIRECTORY_ABSOLUTE}/libs/kiss/include)
