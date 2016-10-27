@@ -19,7 +19,7 @@ target_link_libraries( ${APP_NAME}
 ------------------------------ RPI -----------------------
 
 
-if(OF_PLATFORM MATCHES armv7)
+if( IS_ARM )
 # Assuming Raspberry Pi 2 and Raspbian
 list(APPEND OPENFRAMEWORKS_DEFINITIONS
 -DTARGET_RASPBERRY_PI
@@ -46,7 +46,7 @@ endif()
 
 
 
-if(OF_PLATFORM MATCHES armv7)
+if( IS_ARM )
     find_package(OpenGLES REQUIRED)
 else()
     find_package(OpenGL REQUIRED)
@@ -55,7 +55,7 @@ endif()
 
 
 
-if(OF_PLATFORM MATCHES armv7)
+if( IS_ARM )
     list(APPEND OPENFRAMEWORKS_INCLUDE_DIRS
             ${EGL_INCLUDE_DIR}
             ${OPENGLES2_INCLUDE_DIR}
@@ -71,7 +71,7 @@ endif()
 
 
 
-if(OF_PLATFORM MATCHES armv7)
+if( IS_ARM )
     set(ARCH_FLAG "-march=armv7-a -mfpu=vfp -mfloat-abi=hard")
 elseif(ARCH_BIT MATCHES 32)
     set(ARCH_FLAG "-m32")
