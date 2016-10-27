@@ -16,14 +16,9 @@ list( APPEND OF_SOURCE_FILES
         )
 
 if( IS_ARM )
-    list(APPEND OPENFRAMEWORKS_SOURCES
-            "${OF_ROOT_DIR}/src/openframeworks/app/ofAppEGLWindow.cpp"
-            )
+    list(APPEND OF_SOURCE_FILES  "${OF_ROOT_DIR}/src/openframeworks/app/ofAppEGLWindow.cpp" )
 else()
-    list(APPEND OPENFRAMEWORKS_SOURCES
-            "${OF_ROOT_DIR}/src/openframeworks/app/ofAppGLFWWindow.cpp"
-
-            )
+    list(APPEND OF_SOURCE_FILES "${OF_ROOT_DIR}/src/openframeworks/app/ofAppGLFWWindow.cpp" )
 endif()
 
 # ============================================================================
