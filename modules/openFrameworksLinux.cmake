@@ -15,13 +15,13 @@ list( APPEND OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofGstVideoPlayer.cpp
         )
 
-if( IS_ARM )
-#    list(APPEND OF_SOURCE_FILES
-#        ${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppEGLWindow.cpp )
-#else()
+#if( IS_ARM )
     list(APPEND OF_SOURCE_FILES
-            ${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppGLFWWindow.cpp )
-endif()
+        ${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppEGLWindow.cpp )
+#else()
+#    list(APPEND OF_SOURCE_FILES
+#            ${OF_DIRECTORY_ABSOLUTE}/libs/openframeworks/app/ofAppGLFWWindow.cpp )
+#endif()
 
 # ============================================================================
 # --------------------------- Include Folders --------------------------------
