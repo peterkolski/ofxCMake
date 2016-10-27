@@ -1,7 +1,7 @@
 # --------- Detecting if Rasperry Pi
 
 set( IS_ARM FALSE)
-if ( CMAKE_SYSTEM_PROCESSOR )
+if ( CMAKE_SYSTEM_PROCESSOR STREQUAL armv7l)
     set( IS_ARM TRUE )
 endif ()
 message( WARNING "Arch: ${CMAKE_SYSTEM_PROCESSOR} -> ${IS_ARM}")
