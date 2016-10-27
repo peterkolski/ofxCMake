@@ -65,6 +65,28 @@ include( FindOpenAL )
 PKG_SEARCH_MODULE( ALSA "REQUIRED" alsa )
 PKG_SEARCH_MODULE( CAIRO "REQUIRED" cairo )
 
+
+if( IS_ARM )
+    find_package(OpenGLES REQUIRED)
+else()
+    find_package(OpenGL REQUIRED)
+endif()
+
+
+if( IS_ARM )
+    include_directories(
+            ${EGL_INCLUDE_DIR}
+            ${OPENGLES2_INCLUDE_DIR}
+    )
+    # Assuming Raspberry Pi 2 and Raspbian
+    include_directories(
+            /opt/vc/include
+            /opt/vc/include/IL
+            /opt/vc/include/interface/vcos/pthreads
+            /opt/vc/include/interface/vmcs_host/linux
+    )
+endif()
+
 include_directories( ${CAIRO_INCLUDE_DIRS} )
 include_directories( ${OPENAL_INCLUDE_DIRS} )
 include_directories( ${ALSA_INCLUDE_DIRS} )
