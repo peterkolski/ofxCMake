@@ -7,35 +7,45 @@
 # Easiest way: replace all the NAME into the name of your addOn
 #
 # =================================================================
-
-
 # -----------------------------------------------------------------
-# --- Script to search for all the .cpp files in the chosen folder
-# --- NOTE: Ensure not to include an example folder
+# --- Set the name of your AddOn
 # -----------------------------------------------------------------
 
-file(   GLOB_RECURSE
-        OFX_NAME_CPP                            # Set internal placeholder name (unique one)
-        "${OF_CMAKE_ADDONS}/ofxNAME/*.cpp"     # Set the directory of your Addon
-        )
+set( NAME_ADDON     ofxNAME )
+
+#==================================================================
+#==================================================================
+# -----------------------------------------------------------------
+# ---------------------------- PATHS ------------------------------
+# -----------------------------------------------------------------
+set( PATH_SOURCE    ${OF_DIRECTORY_ABSOLUTE}/addons/${NAME_ADDON}/src )
+set( PATH_LIBS      ${OF_DIRECTORY_ABSOLUTE}/addons/${NAME_ADDON}/libs )
+
+# --- Setting abolute path to prevent errors
+get_filename_component( PATH_SOURCE_ABSOLUTE ${PATH_SOURCE} ABSOLUTE)
+get_filename_component( PATH_LIBS_ABSOLUTE ${PATH_LIBS} ABSOLUTE)
 
 # -----------------------------------------------------------------
-# --- Set ALL directories of the addOn, which contain .h files
+# ---------------------------- SOURCE -----------------------------
 # -----------------------------------------------------------------
 
-include_directories(
-        "${OF_CMAKE_ADDONS}/ofxNAME/src"   # Set the directory of your Addon
-)
+file( GLOB_RECURSE   OFX_ADDON_CPP          "${PATH_SOURCE_ABSOLUTE}/*.cpp" )
+file( GLOB_RECURSE   OFX_ADDON_LIBS_CPP     "${PATH_LIBS_ABSOLUTE}/*.cpp" )
+add_library(  ${NAME_ADDON}   STATIC   ${OFX_ADDON_CPP} ${OFX_ADDON_LIBS_CPP} )
 
 # -----------------------------------------------------------------
-# --- Set the keyword, so you can simply include the addOn
-# --- (Creates actually a library)
+# ---------------------------- HEADERS ----------------------------
 # -----------------------------------------------------------------
 
-add_library(    ofxNAME              # Set the name of the addOn
-                STATIC
-                ${OFX_NAME_CPP}      # Set the name
-                )
+find_header_directories( HEADERS_SOURCE ${PATH_SOURCE_ABSOLUTE} )
+include_directories( ${HEADERS_SOURCE} )
+
+find_header_directories( HEADERS_LIBS ${PATH_LIBS_ABSOLUTE} )
+include_directories( ${HEADERS_LIBS} )
+
+# -----------------------------------------------------------------
+# ------------------------------ LIBS  ----------------------------
+# -----------------------------------------------------------------
 
 # -----------------------------------------------------------------
 # --- In case OS specific libs are needed
@@ -43,10 +53,10 @@ add_library(    ofxNAME              # Set the name of the addOn
 # -----------------------------------------------------------------
 
 #if( APPLE )
-#    find_library( CORE_FOUNDATION_LIB_NAME  CoreFoundation)
-#    set( compiledLib    "${OF_CMAKE_ADDONS}/ofxNAME/lib/myLib.a" )
-#    set(    EXTRA_LIBS_NAME
-#            ${CORE_FOUNDATION_LIB_NAME}
+#    find_library( CORE_FOUNDATION_LIB_${NAME_ADDON}  CoreFoundation)
+#    set( compiledLib    "${OF_CMAKE_ADDONS}/${NAME_ADDON}/lib/myLib.a" )
+#    set(    EXTRA_LIBS_${NAME_ADDON}
+#            ${CORE_FOUNDATION_LIB_${NAME_ADDON}}
 #            ${compiledLib}
 #            )
 #endif()
