@@ -1,17 +1,14 @@
 # =================================================================
 #
-# Template for a static approach
-# WITH libraries
-# static -> .cmake file is in the '/of/CMake/addons/' folder
+# Template for addOns WITH pre compiled libraries
 #
 # Easiest way: replace all the NAME into the name of your addOn
+# It has to have the same name, as the directory it is in
+# [e.g. ofxOneEuroFilter is in of/addons/ofxOneEuroFilter/]
 #
 # =================================================================
-# -----------------------------------------------------------------
-# --- Set the name of your AddOn
-# -----------------------------------------------------------------
 
-set( NAME_ADDON     ofxNAME )
+set( NAME_ADDON     ofxNAME )       # <--- Set the name here
 
 #==================================================================
 #==================================================================

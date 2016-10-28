@@ -1,8 +1,14 @@
-# -----------------------------------------------------------------
-# --- Set the name of your AddOn
-# -----------------------------------------------------------------
+# =================================================================
+#
+# Template for addOns
+#
+# Easiest way: replace all the NAME into the name of your addOn
+# It has to have the same name, as the directory it is in
+# [e.g. ofxOneEuroFilter is in of/addons/ofxOneEuroFilter/]
+#
+# =================================================================
 
-set( NAME_ADDON     ofxNAME )
+set( NAME_ADDON     ofxNAME )       # <--- Set the name here
 
 #==================================================================
 #==================================================================
