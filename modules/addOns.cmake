@@ -1,3 +1,6 @@
+include( ${OF_CMAKE_MODULES}/addOnsMacros.cmake )
+
+# --- INTERNAL
 OF_include_internal_addOn( ofxOsc )
 OF_include_internal_addOn( ofxXmlSettings )
 OF_include_internal_addOn( ofxGui )
@@ -10,4 +13,11 @@ OF_include_internal_addOn( ofxThreadedImageLoader )
 OF_include_internal_addOn( ofxAssimpModelLoader )
 OF_include_internal_addOn( ofxEmscripten )
 
-
+# --- EXTERNAL
+OF_include_external_addOn( ofxTwistedRibbon )
+OF_include_external_addOn( ofxOneEuroFilter )
+OF_include_external_addOn( ofxFlowTools )
+OF_include_external_addOn( ofxMidi )
+OF_include_external_addOn( ofxPiMapper )
+OF_include_external_addOn( ofxIO )
+OF_include_external_addOn( ofxQuadWarp )
