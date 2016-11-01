@@ -27,10 +27,10 @@ add_library(  ${NAME_ADDON}   STATIC   ${OFX_ADDON_CPP} )
 # ---------------------------- HEADERS ----------------------------
 # -----------------------------------------------------------------
 
-find_header_directories( HEADERS_SOURCE ${PATH_SOURCE_ABSOLUTE} )
+OF_find_header_directories( HEADERS_SOURCE ${PATH_SOURCE_ABSOLUTE} )
 include_directories( ${HEADERS_SOURCE} )
 
-find_header_directories( HEADERS_LIBS ${PATH_LIBS_ABSOLUTE} )
+OF_find_header_directories( HEADERS_LIBS ${PATH_LIBS_ABSOLUTE} )
 include_directories( ${HEADERS_LIBS} )
 
 # -----------------------------------------------------------------
