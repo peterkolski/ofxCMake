@@ -37,7 +37,7 @@ MACRO( OF_find_header_directories return_list PATH )
     ENDFOREACH()
     LIST(REMOVE_DUPLICATES dir_list)
     SET(${return_list} ${dir_list})
-ENDMACRO()
+ENDMACRO( OF_find_header_directories )
 
 #==================================================================
 
@@ -48,7 +48,7 @@ macro( OF_find_source_files return_list PATH )
     file( GLOB_RECURSE   FILES_CC    "${PATH}/*.cc" )
     file( GLOB_RECURSE   FILES_C     "${PATH}/*.c" )
     set( ${return_list} ${FILES_CPP} ${FILES_CC} ${FILES_C} )
-endmacro()
+endmacro( OF_find_source_files )
 
 #==================================================================
 
