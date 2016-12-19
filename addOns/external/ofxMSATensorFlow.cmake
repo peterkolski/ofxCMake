@@ -31,8 +31,14 @@ add_library(  ${NAME_ADDON}   STATIC   ${OFX_ADDON_CPP} ${OFX_ADDON_LIBS_CPP} )
 OF_find_header_directories( HEADERS_SOURCE ${PATH_SOURCE_ABSOLUTE} )
 OF_find_header_directories( HEADERS_LIBS ${PATH_LIBS_ABSOLUTE} )
 
-include_directories( "${PATH_LIBS_ABSOLUTE}/tensorflow/include" )
+#include_directories( "${PATH_LIBS_ABSOLUTE}/tensorflow/include" )
+include_directories(
+        ${PATH_LIBS_ABSOLUTE}/tensorflow/include
+        ${PATH_LIBS_ABSOLUTE}/tensorflow/include/third_party/eigen3
+        ${PATH_LIBS_ABSOLUTE}tensorflow/include/external/eigen_archive
+        ${PATH_LIBS_ABSOLUTE}/tensorflow/include/external/eigen_archive/eigen-eigen-70505a059011
+        )
 
 
 include_directories( ${HEADERS_SOURCE} )
-include_directories( ${HEADERS_LIBS} )
+#include_directories( ${HEADERS_LIBS} )
