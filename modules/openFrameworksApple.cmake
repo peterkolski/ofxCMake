@@ -14,6 +14,13 @@ list( APPEND OF_SOURCE_FILES
         ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/sound/ofRtAudioSoundStream.cpp
         )
 
+# --- For xCode 8.1 and macOS 10.12 (Sierra)
+if( EXISTS "${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofAVFoundationGrabber.mm" )
+    list( APPEND OF_SOURCE_FILES
+            ${OF_DIRECTORY_ABSOLUTE}/libs/openFrameworks/video/ofAVFoundationGrabber.mm
+            )
+endif()
+
 # ============================================================================
 # --------------------------- Include Folders --------------------------------
 set(HEADER_GLEW ${OF_DIRECTORY_ABSOLUTE}/libs/glew/include)
