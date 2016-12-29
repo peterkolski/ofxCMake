@@ -81,4 +81,5 @@ At the moment (Oct 2016) only Mac OS is fully tested.
 
 The infrastructure for other OS (Linux, Windows) is already set up.
 
-Tested on MacOS 10.11.6 with cMake 3.2.1
+Tested on MacOS 10.12.2 with cMake 3.2.1
+with of 0.9.8
