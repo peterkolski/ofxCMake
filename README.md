@@ -77,9 +77,8 @@ In this `CMakeLists.txt`:
 	- The addOn files are not placed in the addOns itself (but in `of/addons/`). It would be better, if each addOn has it's .cmake file already included. But this would mean, that the developer deliver it in their source code. 
 
 ## Compatibility
-At the moment (Oct 2016) only Mac OS is fully tested. 
+At the moment (Dec 2016) only Mac OS is fully tested. 
 
 The infrastructure for other OS (Linux, Windows) is already set up.
 
-Tested on MacOS 10.12.2 with cMake 3.2.1
-with of 0.9.8
+Tested on MacOS 10.12.2 with cMake 3.2.1 and of 0.9.8
