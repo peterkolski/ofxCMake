@@ -22,4 +22,4 @@ OF_include_external_addOn( ofxPiMapper )
 OF_include_external_addOn( ofxIO )
 OF_include_external_addOn( ofxQuadWarp )
 OF_include_external_addOn( ofxGrt )
-
+OF_include_external_addOn( ofxDarknet )
