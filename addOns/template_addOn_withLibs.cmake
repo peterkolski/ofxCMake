@@ -59,4 +59,4 @@ include_directories( ${HEADERS_LIBS} )
 #            )
 #endif()
 
-#target_link_libraries( ofxNAME ${EXTRA_LIBS_NAME} )
+#target_link_libraries( NAME_ADDON ${EXTRA_LIBS_NAME} )
