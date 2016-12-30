@@ -28,7 +28,6 @@ get_filename_component( PATH_LIBS_ABSOLUTE ${PATH_LIBS} ABSOLUTE)
 # -----------------------------------------------------------------
 
 file( GLOB_RECURSE   OFX_ADDON_CPP          "${PATH_SOURCE_ABSOLUTE}/*.cpp" )
-#file( GLOB_RECURSE   OFX_ADDON_LIBS_CPP     "${PATH_LIBS_ABSOLUTE}/*.cpp" ) #should be in the compiles lib
 add_library(  ${NAME_ADDON}   STATIC   ${OFX_ADDON_CPP} ${OFX_ADDON_LIBS_CPP} )
 
 # -----------------------------------------------------------------
@@ -50,14 +49,10 @@ include_directories(
 # ------------------------------ LIBS  ----------------------------
 # -----------------------------------------------------------------
 
-# -----------------------------------------------------------------
-# --- In case OS specific libs are needed
-# --- Be sure to link them in target_link_libraries()
-# -----------------------------------------------------------------
 
 if( APPLE )
     target_link_libraries( ofxDarknet
-            "${OF_CMAKE_ADDONS}/${NAME_ADDON}/libs/darknet/lib/libdarknetCUDA.dylib"
+            ${PATH_LIBS}/darknet/lib/libdarknetCUDA.dylib
             /usr/local/cuda/lib/libcudart.dylib
             /usr/local/cuda/lib/libcublas.dylib
             /usr/local/cuda/lib/libcurand.dylib
