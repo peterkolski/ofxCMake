@@ -13,7 +13,7 @@ project( openframeworks )
 set( APP_NAME   ofApp )
 
 # ------------------------ OF Path -----------------------
-# --- If outside the OF stucture, set an absolute OF path
+# --- If outside the OF structure, set an absolute OF path
 set( OF_DIRECTORY_BY_USER "../../.." )
 
 # --------------------- Source Files ---------------------
