@@ -1,4 +1,5 @@
-#THIS FILE SHOULD BE PUT INTO THE OF PROJECT FOLDER
+# =================== ofxCMake ===========================
+#  PUT THIS FILE INTO YOUR OPENFRAMEWORKS PROJECT FOLDER
 
 # ========================================================
 # ===================== CMake Settings ===================
