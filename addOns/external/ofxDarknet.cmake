@@ -1,17 +1,6 @@
 # =================================================================
-#
-# Template for addOns WITH pre compiled libraries
-#
-# Easiest way: replace all the NAME into the name of your addOn
-# It has to have the same name, as the directory it is in
-# [e.g. ofxOneEuroFilter is in of/addons/ofxOneEuroFilter/]
-#
-# =================================================================
 
-set( NAME_ADDON     ofxDarknet )       # <--- Set the name here
-
-#==================================================================
-
+set( NAME_ADDON     ofxDarknet )
 
 # -----------------------------------------------------------------
 # ---------------------------- PATHS ------------------------------
@@ -28,17 +17,13 @@ get_filename_component( PATH_LIBS_ABSOLUTE ${PATH_LIBS} ABSOLUTE)
 # -----------------------------------------------------------------
 
 file( GLOB_RECURSE   OFX_ADDON_CPP          "${PATH_SOURCE_ABSOLUTE}/*.cpp" )
-add_library(  ${NAME_ADDON}   STATIC   ${OFX_ADDON_CPP} ${OFX_ADDON_LIBS_CPP} )
+add_library(  ${NAME_ADDON}   STATIC   ${OFX_ADDON_CPP} )
 
 # -----------------------------------------------------------------
 # ---------------------------- HEADERS ----------------------------
 # -----------------------------------------------------------------
-
-OF_find_header_directories( HEADERS_SOURCE ${PATH_SOURCE_ABSOLUTE} )
-include_directories( ${HEADERS_SOURCE} )
-
-OF_find_header_directories( HEADERS_LIBS ${PATH_LIBS_ABSOLUTE} )
-include_directories( ${HEADERS_LIBS} )
+include_directories( ${PATH_SOURCE_ABSOLUTE}  )
+include_directories( ${PATH_LIBS_ABSOLUTE}/darknet/include )
 
 # --- CUDA
 include_directories(
@@ -48,11 +33,9 @@ include_directories(
 # -----------------------------------------------------------------
 # ------------------------------ LIBS  ----------------------------
 # -----------------------------------------------------------------
-
-
 if( APPLE )
     target_link_libraries( ofxDarknet
-            ${PATH_LIBS}/darknet/lib/libdarknetCUDA.dylib
+            ${PATH_SOURCE_ABSOLUTE}/darknet/lib//osx/libdarknetOSX.dylib
             /usr/local/cuda/lib/libcudart.dylib
             /usr/local/cuda/lib/libcublas.dylib
             /usr/local/cuda/lib/libcurand.dylib
