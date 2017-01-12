@@ -25,16 +25,18 @@ add_library(  ${NAME_ADDON}   STATIC   ${OFX_ADDON_CPP} )
 include_directories( ${PATH_SOURCE_ABSOLUTE}  )
 include_directories( ${PATH_LIBS_ABSOLUTE}/darknet/include )
 
-# --- CUDA
+
+## --- CUDA
 include_directories(
         /usr/local/cuda/include
-        /opt/local/include )
+        /opt/local/include
+)
 
 # -----------------------------------------------------------------
 # ------------------------------ LIBS  ----------------------------
 # -----------------------------------------------------------------
 if( APPLE )
-    target_link_libraries( ofxDarknet
+    target_link_libraries( ${NAME_ADDON}
             ${PATH_SOURCE_ABSOLUTE}/darknet/lib//osx/libdarknetOSX.dylib
             /usr/local/cuda/lib/libcudart.dylib
             /usr/local/cuda/lib/libcublas.dylib
