@@ -24,4 +24,6 @@ OF_include_external_addOn( ofxQuadWarp )
 OF_include_external_addOn( ofxGrt )
 OF_include_external_addOn( ofxEliza )
 OF_include_external_addOn( ofxSpeech )
+OF_include_external_addOn( ofxDatGui )
+
 
