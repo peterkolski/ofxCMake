@@ -36,3 +36,11 @@ OF_find_header_directories( HEADERS_LIBS ${PATH_LIBS} )
 
 include_directories( ${HEADERS_SOURCE} )
 include_directories( ${HEADERS_LIBS} )
+
+IF(APPLE)
+    FIND_LIBRARY(Accelerate_LIBRARY Accelerate )
+    target_link_libraries( ${NAME_ADDON} ${Accelerate_LIBRARY} )
+ENDIF (APPLE)
+
+
+
