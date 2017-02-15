@@ -1,8 +1,5 @@
 
-set( NAME_ADDON     ofxSyphon )       # <--- Set the name here
-
-#==================================================================
-
+set( NAME_ADDON     ofxSyphon )
 
 # -----------------------------------------------------------------
 # ---------------------------- PATHS ------------------------------
@@ -39,10 +36,18 @@ OF_find_header_directories( HEADERS_LIBS ${PATH_LIBS} )
 include_directories( ${HEADERS_SOURCE} )
 include_directories( ${HEADERS_LIBS} )
 
+
+
+# -----------------------------------------------------------------
+# ----------------------------- LIBS ------------------------------
+# -----------------------------------------------------------------
+
+
 IF(APPLE)
-#    find_library( Syphon_LIBRARY Syphon ${PATH_LIBS}/libs/Syphon/lib/osx ) #It should be possible to set a relative path
+#    find_library( Syphon_LIBRARY Syphon ${PATH_LIBS}/libs/Syphon/lib/osx REQUIRED ) #It should be possible to set a relative path
     find_library( Syphon_LIBRARY Syphon REQUIRED )
-    find_library( core_Foundation CoreFoundation REQUIRED )
+    message( "NOTE: Copy the Syphon framework into /Library/Frameworks/" )
+    find_library( core_Foundation_SYPHON CoreFoundation REQUIRED )
     find_library( COCOA_LIB_SYPHON  Cocoa REQUIRED )
-    target_link_libraries( ${NAME_ADDON} ${Syphon_LIBRARY} ${core_Foundation} ${COCOA_LIB_SYPHON} )
+    target_link_libraries( ${NAME_ADDON} ${Syphon_LIBRARY} ${core_Foundation_SYPHON} ${COCOA_LIB_SYPHON} )
 ENDIF (APPLE)
