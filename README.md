@@ -1,9 +1,12 @@
 ![ofxCMake Logo](ofxCMake_Logo.jpg)
 
 # CMake for OpenFrameworks
+CMake is a meta build system, so it can generate different build systems like Visual Studio Projects, xCode, make etc. It can also create installers like DEB, RPM and MSI. 
+
+***CMake Intro:***
+
 [CMake](https://cmake.org) is a universal, plattform independent build system. It tells which source files and libraries of OpenFrameworks, your project and addOns have to be compiled together so you have your application. CMake is supported e.g. by the IDEs: [CLion](https://www.jetbrains.com/clion/), [QTCreator](https://www.qt.io/ide/), [KDevelop](https://www.kdevelop.org).
 
-CMake is a meta system, so it can generate different build systems like Visual Studio Projects, xCode, make etc. It can also create installers like DEB, RPM and MSI. 
 
 ### *Note*
 This is not an ofxAddOn in the normal way.
@@ -24,10 +27,10 @@ So do not just copy it into the `of/addons/` folder and expect it to work.
 ### Preperation
 - Copy the file `ofxCMake/project/CMakeLists.txt` into the folder of your openframeworks project 
 
-In this `CMakeLists.txt`:
-
-- If you have more source files than the standard `main.cpp`, `ofApp.cpp` – be sure to include them in the section "Source Files"
-- *Optional:* Change name of your application `APP_NAME`
+- *Optional:* 
+	- [If not done before] In this `CMakeLists.txt`: adjust the path of your OF folder.
+	- If you have more source files than the standard `main.cpp`, `ofApp.cpp` – be sure to include them in the section "Source Files"
+	- Change name of your application `APP_NAME`
 
 ### Command Line Compilation
 - Create a new directory in your project folder – e.g.: `mkdir build`
@@ -77,7 +80,7 @@ In this `CMakeLists.txt`:
 	- The addOn files are not placed in the addOns itself (but in `of/addons/`). It would be better, if each addOn has it's .cmake file already included. But this would mean, that the developer deliver it in their source code. 
 
 ## Compatibility
-At the moment (Dec 2016) only Mac OS is fully tested. 
+At the moment (Feb 2017) only Mac OS is fully tested. 
 
 The infrastructure for other OS (Linux, Windows) is already set up.
 
