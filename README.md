@@ -12,6 +12,12 @@ CMake is a meta build system, so it can generate different build systems like Vi
 This is not an ofxAddOn in the normal way.
 So do not just copy it into the `of/addons/` folder and expect it to work.
 
+## Quick Start Guide
+1. Clone into `of/addons/ofxCMake`
+2. In `ofxCMake/project/CMakeLists.txt` change the path of your OF folder. 
+3. Copy `ofxCMake/project/CMakeLists.txt` into your project folder
+4. Open with CLion or compile via terminal
+
 ## Installation
 1. Clone the git files in your openframeworks addon folder
    
