@@ -39,12 +39,10 @@ OF_find_header_directories( HEADERS_LIBS ${PATH_LIBS} )
 include_directories( ${HEADERS_SOURCE} )
 include_directories( ${HEADERS_LIBS} )
 
-
 IF(APPLE)
-    FIND_LIBRARY( Syphon_LIBRARY Syphon ${PATH_LIBS}/libs/Syphon/lib/osx )
-    FIND_LIBRARY( core_Foundation CoreFoundation )
-#    find_library( CORE_FOUNDATION_LIB_KINECT  CoreFoundation)
-#    find_library( IOKIT_LIB_KINECT  IOKit)
-    find_library( COCOA_LIB_SYPHON  Cocoa)
+#    find_library( Syphon_LIBRARY Syphon ${PATH_LIBS}/libs/Syphon/lib/osx ) #It should be possible to set a relative path
+    find_library( Syphon_LIBRARY Syphon REQUIRED )
+    find_library( core_Foundation CoreFoundation REQUIRED )
+    find_library( COCOA_LIB_SYPHON  Cocoa REQUIRED )
     target_link_libraries( ${NAME_ADDON} ${Syphon_LIBRARY} ${core_Foundation} ${COCOA_LIB_SYPHON} )
 ENDIF (APPLE)
