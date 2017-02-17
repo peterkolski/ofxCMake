@@ -1,6 +1,13 @@
 ![ofxCMake Logo](ofxCMake_Logo.jpg)
 
 # CMake for OpenFrameworks
+## Quick Start Guide
+1. Clone into `of/addons/ofxCMake`
+2. In `ofxCMake/project/CMakeLists.txt` change the path of your OF folder. 
+3. Copy `ofxCMake/project/CMakeLists.txt` into your project folder
+4. Open with CLion or compile via terminal
+
+## Discription
 CMake is a meta build system, so it can generate different build systems like Visual Studio Projects, xCode, make etc. It can also create installers like DEB, RPM and MSI. 
 
 ***CMake Intro:***
@@ -12,11 +19,6 @@ CMake is a meta build system, so it can generate different build systems like Vi
 This is not an ofxAddOn in the normal way.
 So do not just copy it into the `of/addons/` folder and expect it to work.
 
-## Quick Start Guide
-1. Clone into `of/addons/ofxCMake`
-2. In `ofxCMake/project/CMakeLists.txt` change the path of your OF folder. 
-3. Copy `ofxCMake/project/CMakeLists.txt` into your project folder
-4. Open with CLion or compile via terminal
 
 ## Installation
 1. Clone the git files in your openframeworks addon folder
@@ -91,3 +93,6 @@ At the moment (Feb 2017) only Mac OS is fully tested.
 The infrastructure for other OS (Linux, Windows) is already set up.
 
 Tested on MacOS 10.12.2 with cMake 3.2.1 and of 0.9.8
+
+## Special Thanks
+**[Avilleret](https://github.com/avilleret)**
