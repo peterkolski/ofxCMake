@@ -1,6 +1,6 @@
 ![ofxCMake Logo](ofxCMake_Logo.jpg)
 
-# CMake for OpenFrameworks
+# CMake for OpenFrameworks [Vers. 0.1]
 ## Quick Start Guide
 1. Clone into `of/addons/ofxCMake`
 2. In `ofxCMake/project/CMakeLists.txt` change the path of your OF folder. 
