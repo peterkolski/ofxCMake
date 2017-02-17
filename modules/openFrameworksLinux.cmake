@@ -41,7 +41,12 @@ set( OF_CORE_LIBS
 
 # ============================================================================
 # ----------------------------- System Frameworks ----------------------------
+set(CMAKE_MODULE_PATH
+  "${CMAKE_MODULE_PATH}"
+  "${CMAKE_CURRENT_LIST_DIR}")
+
 find_package(PkgConfig REQUIRED)
+find_package(GStreamer REQUIRED)
 
 PKG_SEARCH_MODULE( ALSA "REQUIRED" alsa )
 PKG_SEARCH_MODULE( CAIRO "REQUIRED" cairo )
