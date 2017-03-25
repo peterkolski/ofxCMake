@@ -26,6 +26,6 @@ OF_include_external_addOn( ofxEliza )
 OF_include_external_addOn( ofxSpeech )
 OF_include_external_addOn( ofxUI )
 OF_include_external_addOn( ofxSoundProcessor )
-OF_include_external_addOn( ofxSyphon )
+OF_include_external_addOn( ofxDatGui )
 
 
