@@ -28,5 +28,6 @@ OF_include_external_addOn( ofxUI )
 OF_include_external_addOn( ofxSoundProcessor )
 OF_include_external_addOn( ofxSyphon )
 OF_include_external_addOn( ofxOscHandShake )
+OF_include_external_addOn( ofxTextAlign )
 
 
