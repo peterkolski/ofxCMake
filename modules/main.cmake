@@ -25,7 +25,7 @@ include( ${OF_CMAKE_MODULES}/addOns.cmake )
 # ============================================================================
 # -------------------------------- OF SOURCE FILES ---------------------------
 # ============================================================================
-include( ${OF_CMAKE_MODULES}/openFrameworksGlobal.cmake )
+include( ${OF_CMAKE_MODULES}/openFrameworks.cmake )
 
 if( APPLE ) # Apple is a Unix, too. So dont ask only first UNIX
     include( ${OF_CMAKE_MODULES}/openFrameworksApple.cmake )
@@ -42,7 +42,7 @@ endif()
 # ============================================================================
 # -------------------------------- OF CONFIGURATION --------------------------
 # ============================================================================
-include( ${OF_CMAKE_MODULES}/configGlobal.cmake)
+include( ${OF_CMAKE_MODULES}/config.cmake)
 
 if( APPLE )
     include( ${OF_CMAKE_MODULES}/configApple.cmake )
