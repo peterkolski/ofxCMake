@@ -8,35 +8,27 @@ list( APPEND OF_SOURCE_FILES
 
 # ============================================================================
 # --------------------------- Include Folders --------------------------------
-set(HEADER_KISS ${OF_DIRECTORY_ABSOLUTE}/libs/kiss/include)
 
 # ------------------ Putting the includes into one list ----------------------
-list( APPEND OF_CORE_HEADERS
-        ${HEADER_KISS}
-        )
+list( APPEND OF_CORE_HEADERS ${OF_DIRECTORY_ABSOLUTE}/libs/kiss/include)
 
 # ============================================================================
 # ------------------------------ Libraries -----------------------------------
-set(LIB_GLFW ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/lib/linux64/libglfw3.a )
-set(LIB_KISS ${OF_DIRECTORY_ABSOLUTE}/libs/kiss/lib/linux64/libkiss.a )
-set(LIB_POCO_CRYPTO ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoCrypto.a )
-set(LIB_POCO_FOUNDATION ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoFoundation.a )
-set(LIB_POCO_NET ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoNet.a )
-set(LIB_POCO_NETSSL ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoNetSSL.a )
-set(LIB_POCO_UTIL ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoUtil.a )
-set(LIB_POCO_XML ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoXML.a )
-set(LIB_POCO_JSON ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoJSON.a )
-set(LIB_TESS ${OF_DIRECTORY_ABSOLUTE}/libs/tess2/lib/linux64/libtess2.a )
 
 # ---- shared
 set( LIB_FMODEX ${OF_DIRECTORY_ABSOLUTE}/libs/fmodex/lib/linux64/libfmodex.so )
 
 set( OF_CORE_LIBS
-        ${LIB_GLFW}
-        ${LIB_KISS}
-        ${LIB_POCO_CRYPTO} ${LIB_POCO_FOUNDATION} ${LIB_POCO_NET}
-        ${LIB_POCO_NETSSL} ${LIB_POCO_UTIL} ${LIB_POCO_XML} ${LIB_POCO_JSON}
-        ${LIB_TESS}
+        ${OF_DIRECTORY_ABSOLUTE}/libs/glfw/lib/linux64/libglfw3.a
+        ${OF_DIRECTORY_ABSOLUTE}/libs/kiss/lib/linux64/libkiss.a
+        ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoCrypto.a
+        ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoFoundation.a
+        ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoNet.a
+        ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoNetSSL.a
+        ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoUtil.a
+        ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoXML.a
+        ${OF_DIRECTORY_ABSOLUTE}/libs/poco/lib/linux64/libPocoJSON.a
+        ${OF_DIRECTORY_ABSOLUTE}/libs/tess2/lib/linux64/libtess2.a
         )
 
 # ============================================================================
@@ -105,4 +97,3 @@ set( OF_CORE_FRAMEWORKS
         boost_system
         ${LIB_FMODEX}       # SHARED
         )
-
